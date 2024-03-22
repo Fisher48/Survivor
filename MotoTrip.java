@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class MotoTrip {
 
     public static int odometer(int[] oksana) {
