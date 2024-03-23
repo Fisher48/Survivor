@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class MotoTrip {
+public class Level1 {
     public static int odometer(int[] oksana) {
         int dist = 0;
         int temp = 0;
