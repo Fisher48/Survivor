@@ -62,8 +62,13 @@ public class Level1 {
             }
             intSum /= 10;
         }
-        String result = String.valueOf(finishSum);
-        return result;
+        if (finishSum == 0){
+            String result = "";
+            return result;
+        } else {
+            String result = String.valueOf(finishSum);
+            return result;
+        }
     }
 }
 
