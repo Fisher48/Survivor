@@ -1,3 +1,4 @@
+import java.text.spi.BreakIteratorProvider;
 import java.util.*;
 
 public class Level1 {
@@ -51,22 +52,13 @@ public class Level1 {
                 }
             }
         }
-        sum *= 100000;
-        int intSum = (int) sum;
-        int finishSum = 0;
-        int numd = 1;
-        for (int i = 0; 0 < intSum; i++) {
-            if (intSum % 10 != 0) {
-                finishSum += intSum % 10 * numd;
-                numd *= 10;
-            }
-            intSum /= 10;
-        }
-        if (finishSum == 0){
-            String result = "";
+        String result = String.format("%.5f",sum);
+        result = result.replaceAll(",","");
+        result = result.replaceAll("0","");
+        if (sum == 0) {
+            result = "";
             return result;
         } else {
-            String result = String.valueOf(finishSum);
             return result;
         }
     }
