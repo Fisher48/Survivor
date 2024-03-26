@@ -1,11 +1,12 @@
 import java.util.*;
+
 public class Level1 {
-    public static String PatternUnlock(int N, int [] hits)  {
+    public static String PatternUnlock(int N, int [] hits) {
         int [][] phone = new int[3][3];
         phone[0][0] = 6; phone[0][1] = 1; phone[0][2] = 9;
         phone[1][0] = 5; phone[1][1] = 2; phone[1][2] = 8;
         phone[2][0] = 4; phone[2][1] = 3; phone[2][2] = 7;
-        double temp = 0;
+        double temp;
         double sum = 0;
 
         for (int i = 0; i < N; i++) {
@@ -50,11 +51,18 @@ public class Level1 {
                 }
             }
         }
-
-        Integer.toString((int) sum);
-        String result = String.format("%.5f",sum);
-        result = result.replaceAll(",","");
-        result = result.replaceAll("^0+","");
+        sum *= 100000;
+        int intSum = (int) sum;
+        int finishSum = 0;
+        int numd = 1;
+        for (int i = 0; 0 < intSum; i++) {
+            if (intSum % 10 != 0) {
+                finishSum += intSum % 10 * numd;
+                numd *= 10;
+            }
+            intSum /= 10;
+        }
+        String result = String.valueOf(finishSum);
         return result;
     }
 }
