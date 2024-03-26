@@ -9,7 +9,7 @@ public class Level1 {
         double temp;
         double sum = 0;
 
-        for (int i = 0; i < N; i++) {
+        for (int i = 0; i < N-1; i++) {
             for (int j = 0; j < phone.length; j++) {
                 for (int k = 0; k < phone[j].length; k++) {
                     if (hits[i] == phone[j][k] && k - 1 <= 2 && k - 1 >= 0 && phone[j][k - 1] == hits[i + 1]){
