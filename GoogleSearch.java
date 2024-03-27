@@ -25,6 +25,7 @@ public class Level1 {
         int[] FindWord = new int[list.size()];
         if (list.isEmpty()) {
             FindWord = new int[]{0};
+            return FindWord;
         }
         for (int i = 0; i < list.size(); i++) {
             String[] check = list.get(i).split(" ");
