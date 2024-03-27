@@ -3,7 +3,6 @@ import java.util.*;
 public class Level1 {
     public static int[] WordSearch(int len, String s, String subs) {
         ArrayList<String> list = new ArrayList<>();
-        int countW = 0;
         String[] firstString = s.split(" ");
         for (int i = 0; i < firstString.length; i++) {
             if (firstString[i] == "") {
@@ -22,7 +21,11 @@ public class Level1 {
                 list.add(firstString[i]);
             }
         }
+
         int[] FindWord = new int[list.size()];
+        if (list.isEmpty()) {
+            FindWord = new int[]{0};
+        }
         for (int i = 0; i < list.size(); i++) {
             String[] check = list.get(i).split(" ");
             for (int j = 0; j < check.length; j++) {
