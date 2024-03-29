@@ -2,31 +2,36 @@ import java.util.*;
 
 public class Level1 {
     public static int[] WordSearch(int len, String s, String subs) {
+        int countW = 0;
+        int countI = 0;
+        int countE = 0;
         ArrayList<String> list = new ArrayList<>();
-        String[] firstString = s.split(" ");
-        for (int i = 0; i < firstString.length; i++) {
-            if (firstString[i] == "") {
-                continue;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == ' ') {
+                countE = i + 1;
             }
-            if (i < firstString.length - 1) {
-                if (firstString[i].length() + firstString[i + 1].length() <= len) {
-                    list.add(firstString[i] + " " + firstString[i + 1]);
-                    i++;
-                    continue;
-                }
-                if (firstString[i].length() + firstString[i + 1].length() > len) {
-                    list.add(firstString[i]);
-                }
-            } else if (i > 0) {
-                list.add(firstString[i]);
+            if (countI >= countE && countW >= len) {
+                list.add(s.substring(countI, i));
+                countI = i;
+                countW = 0;
             }
+            if (countW >= len && s.charAt(i) != ' ') {
+                list.add(s.substring(countI, countE));
+                countI = countE;
+                countW = i - countE;
+            }
+            if (countW >= len) {
+                list.add(s.substring(countI, countE));
+                countI = countE;
+                countW = i - countE;
+            }
+            if (i == s.length() - 1) {
+                list.add(s.substring(countI, i + 1));
+            }
+            countW++;
         }
 
         int[] FindWord = new int[list.size()];
-        if (list.isEmpty()) {
-            FindWord = new int[]{0};
-            return FindWord;
-        }
         for (int i = 0; i < list.size(); i++) {
             String[] check = list.get(i).split(" ");
             for (int j = 0; j < check.length; j++) {
