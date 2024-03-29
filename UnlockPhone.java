@@ -52,14 +52,13 @@ public class Level1 {
             }
         }
         String result = String.format("%.5f",sum);
-        result = result.replaceAll(",","");
-        result = result.replaceAll("0","");
         if (sum == 0) {
             result = "";
             return result;
-        } else {
-            return result;
         }
+        result = result.replaceAll(",","");
+        result = result.replaceAll("0","");
+        return result;
     }
 }
 
