@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Election {
+public class Level1 {
 
     public static String MassVote(int N, int [] Votes) {
         String winner = "winner ";
