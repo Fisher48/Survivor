@@ -2,6 +2,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ElectionTest {
+    String nw = "no winner";
 
     @Test
     public void MajorityTest () {
@@ -21,14 +22,14 @@ public class ElectionTest {
     public void NoWinnerTest () {
         int N = 4;
         int[] votes = {111, 111, 110, 110};
-        assertEquals("no winner",Election.MassVote(N,votes));
+        assertEquals(nw,Election.MassVote(N,votes));
     }
 
     @Test
     public void NoWinner2Test () {
         int N = 3;
         int[] votes = {1, 2, 2};
-        assertEquals("no winner",Election.MassVote(N,votes));
+        assertEquals(nw,Election.MassVote(N,votes));
     }
 
     @Test
@@ -42,7 +43,7 @@ public class ElectionTest {
     public void ManyCandidatesTest () {
         int N = 10;
         int[] votes = {100, 60, 10, 10, 15, 5, 55, 42, 11, 312, 312};
-        assertEquals("no winner",Election.MassVote(N,votes));
+        assertEquals(nw,Election.MassVote(N,votes));
     }
 
     @Test
