@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class UfoSignals {
+public class Level1 {
    public static int [] UFO(int N, int [] data, boolean octal) {
 
        int[] decimalCode = new int[N];
