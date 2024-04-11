@@ -8,17 +8,17 @@ public class Level1 {
 
         if (H1 >= H2 && W1 >= W2) {
             StringBuffer[] str2 = new StringBuffer[H2];
-            String x = S2.substring(4);
+            String x = S2;
             String[] str22 = S2.split(" ");
-            for (int i = 0; i < str22.length-2; i++) {
-                str2[i] = new StringBuffer(str22[i+2]);
+            for (int i = 0; i < str22.length; i++) {
+                str2[i] = new StringBuffer(str22[i]);
             }
 
             StringBuffer[] str1 = new StringBuffer[H1];
-            String y = S1.substring(4);
+            String y = S1;
             String[] str11 = S1.split(" ");
-            for (int i = 0; i < str11.length-2; i++) {
-                str1[i] = new StringBuffer(str11[i+2]);
+            for (int i = 0; i < str11.length; i++) {
+                str1[i] = new StringBuffer(str11[i]);
             }
 
             for (int i = 0; i <= str1.length - str2.length; i++) {
