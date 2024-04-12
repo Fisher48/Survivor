@@ -1,5 +1,6 @@
 import java.util.*;
-public class PatternDetection {
+
+public class Level1 {
 
     public static boolean LineAnalysis(String line) {
         String reverse = "";
