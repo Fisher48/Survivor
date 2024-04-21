@@ -25,7 +25,7 @@ public class Level1 {
             return s;
         }
         Collections.sort(list);
-        return s = list.getFirst();
+        return list.getFirst();
     }
 }
 
