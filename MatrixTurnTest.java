@@ -6,10 +6,10 @@ public class MatrixTurnTest {
     @Test
     public void SampleTest() {
         String[] matrix = {"123456", "234567", "345678", "456789"};
-        String[] matrixAfter = {"432123", "575434", "689645", "789876"};
+        String[] matrixAfter = {"212345", "343456", "456767", "567898"};
         String[] turnMatrix;
         turnMatrix = matrix;
-        MatrixTurn.MatrixTurn(turnMatrix,4,6,3);
+        MatrixTurn.MatrixTurn(turnMatrix,4,6,1);
         assertArrayEquals(matrixAfter,turnMatrix);
     }
 
