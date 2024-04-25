@@ -22,7 +22,7 @@ public class Level1 {
             M = digitsMatrix.length;
             N = digitsMatrix[0].length;
 
-            while (row < N || colum < M) {
+            while (row < N && colum < M) {
 
                 if (row + 1 == M || colum + 1 == N) {
                     break;
