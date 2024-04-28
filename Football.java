@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Level1 {
+public class Football {
 
     public static int[] backCurrF(int[] changeF){
         int[] F = new int[changeF.length];
@@ -20,7 +20,7 @@ public class Level1 {
         Arrays.sort(temp);
         for (int i = 0; i < N; i++) {
             one = F[i];
-            for (int j = 1; j < N-1; j++) {
+            for (int j = i + 1; j < N; j++) {
                 two = F[j];
                 F[i] = two;
                 F[j] = one;
@@ -46,11 +46,11 @@ public class Level1 {
         Arrays.sort(temp);
         int change = 0;
 
-        for (int i = 0; i < N/2; i++) {
-            for(int j = 0; j <= N/2; j++) {
+        for (int i = 0; i < N / 2; i++) {
+            for(int j = 0; j <= N / 2; j++) {
                 change = F[j];
-                F[j] = F[N-j-i-1];
-                F[N-j-i-1] = change;
+                F[j] = F[N - j - i - 1];
+                F[N - j - i - 1] = change;
             }
             if (Arrays.equals(F, temp)){
                 return true;
@@ -60,11 +60,11 @@ public class Level1 {
         }
 
         while (N > 0) {
-            for (int i = 0; i <= N/2; i++) {
-                for (int j = N-1; j > N/2; j--) {
+            for (int i = 0; i <= N / 2; i++) {
+                for (int j = N - 1; j > N / 2; j--) {
                     change = F[j];
-                    F[j] = F[N-j+i];
-                    F[N-j+i] = change;
+                    F[j] = F[N - j + i];
+                    F[N - j + i] = change;
                 }
                 if (Arrays.equals(F, temp)) {
                     return true;
@@ -79,9 +79,9 @@ public class Level1 {
         while (N > 0) {
                 for (int j = 0; j < N / 2; j++) {
                     for (int i = 1; i < N / 2; i++) {
-                        change = F[i+j];
-                        F[i+j] = F[N-i+1];
-                        F[N-i+1] = change;
+                        change = F[i + j];
+                        F[i + j] = F[N - i + 1];
+                        F[N - i + 1] = change;
                     }
                 if (Arrays.equals(F, temp)) {
                     return true;
@@ -101,6 +101,9 @@ public class Level1 {
             temp[i] = F[i];
         }
         Arrays.sort(temp);
+        if (Arrays.equals(temp, F)){
+            return false;
+        }
         win = first(F, N);
         if (!win) {
             win = second(F,N);
