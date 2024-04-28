@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Football2 {
+public class Level1 {
 
     public static boolean Football(int F[], int N) {
         boolean method = false;
