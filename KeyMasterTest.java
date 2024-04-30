@@ -52,7 +52,7 @@ public class KeyMasterTest {
         assertEquals("100100001000",KeyMaster.Keymaker(12));
     }
     @Test
-    public void FifteenDoors(){
+    public void FiftyDoors(){
         assertEquals("10010000100000010000000010000000000100000000000010",KeyMaster.Keymaker(50));
     }
 
