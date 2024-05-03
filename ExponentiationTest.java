@@ -9,8 +9,18 @@ public class ExponentiationTest {
     }
 
     @Test
+    public void expOneInOne(){
+        assertEquals(1,Exponentiation.expon(1,1));
+    }
+
+    @Test
     public void expFiveInSix(){
         assertEquals(15625,Exponentiation.expon(5,6));
+    }
+
+    @Test
+    public void SumOfThe1Digits(){
+        assertEquals(1,Exponentiation.sumOfTheDigits(1));
     }
 
     @Test
