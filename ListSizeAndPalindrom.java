@@ -12,16 +12,14 @@ public class ListSizeAndPalindrom {
         return len;
     }
 
-    public static boolean palindrom(String s) {
-        StringBuffer sb = new StringBuffer();
-        sb.append(s);
-        if (s.length() <= 1) {
+    public static boolean palindrom(String s, int start, int end) {
+        if (start > end) {
             return true;
         }
-        if (s.charAt(0) == s.charAt(s.length()-1)) {
-            sb.deleteCharAt(s.length()-1);
-            sb.deleteCharAt(0);
-            return palindrom(sb.toString());
+        if (s.charAt(start) == s.charAt(end)) {
+            start++;
+            end--;
+            return palindrom(s,start,end);
         }
         return false;
     }
