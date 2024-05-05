@@ -17,14 +17,14 @@ public class ListSizeAndPalindromTest {
 
     @Test
     public void PalindromNumsTest() {
-        assertEquals(true,ListSizeAndPalindrom.palindrom("оно"));
-        assertEquals(false,ListSizeAndPalindrom.palindrom("123211"));
-        assertEquals(false,ListSizeAndPalindrom.palindrom("Привет"));
-        assertEquals(true,ListSizeAndPalindrom.palindrom("radar"));
-        assertEquals(false,ListSizeAndPalindrom.palindrom("16787761"));
-        assertEquals(true,ListSizeAndPalindrom.palindrom("12321"));
-        assertEquals(true,ListSizeAndPalindrom.palindrom("38283"));
-        assertEquals(true,ListSizeAndPalindrom.palindrom("11111"));
+        assertEquals(true,ListSizeAndPalindrom.palindrom("оно",0,2));
+        assertEquals(false,ListSizeAndPalindrom.palindrom("123211",0,5));
+        assertEquals(false,ListSizeAndPalindrom.palindrom("Привет",0,5));
+        assertEquals(true,ListSizeAndPalindrom.palindrom("radar",0,4));
+        assertEquals(false,ListSizeAndPalindrom.palindrom("16787761", 0, 7));
+        assertEquals(true,ListSizeAndPalindrom.palindrom("12321",0,4));
+        assertEquals(true,ListSizeAndPalindrom.palindrom("38283",0,4));
+        assertEquals(true,ListSizeAndPalindrom.palindrom("11111",0,4));
     }
 
 }
