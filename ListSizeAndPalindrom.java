@@ -12,16 +12,18 @@ public class ListSizeAndPalindrom {
         return len;
     }
 
-    public static boolean palindrom(String s, int start, int end) {
+    public static boolean palindrom(char[] word, int start, int end) {
         if (start > end) {
             return true;
         }
-        if (s.charAt(start) == s.charAt(end)) {
-            start++;
-            end--;
-            return palindrom(s,start,end);
+        if (word[start] == word[end]) {
+            return palindrom(word,start+1,end-1);
         }
         return false;
+    }
+
+    public static boolean checkPalindrom(String s){
+        return palindrom(s.toCharArray(),0,s.length()-1);
     }
 }
 
