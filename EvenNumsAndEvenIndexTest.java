@@ -19,7 +19,7 @@ public class EvenNumsAndEvenIndexTest {
         list.add("проверка"); list.add("вывода"); list.add("на"); list.add("экран"); list.add("четных"); list.add("индексов");
         List<String> evenNums = new ArrayList<>();
         evenNums.add("проверка"); evenNums.add("на");evenNums.add("четных");
-        assertEquals(evenNums,EvenNumsAndEvenIndex.evenIndex(list));
+        assertEquals(evenNums,EvenNumsAndEvenIndex.evenIndex(list,0));
     }
 
 }
