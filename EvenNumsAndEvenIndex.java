@@ -15,15 +15,14 @@ public class EvenNumsAndEvenIndex {
     }
 
     // Печать элементов списка с чётными индексами;
-    public static List<String> evenIndex(List<String> list) {
-        if (list.isEmpty()) {
+    public static List<String> evenIndex(List<String> list, int index) {
+        if (index > list.size()-1) {
             return null;
         }
-        if ((list.size()-1) % 2 == 0) {
-            System.out.println(list.getLast());
-        }
-        list.remove(list.getLast());
-        return evenIndex(list);
+        System.out.println(list.get(index));
+        index++;
+        list.remove(list.getFirst());
+        return evenIndex(list, index);
     }
 }
 
