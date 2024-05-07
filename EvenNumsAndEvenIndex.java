@@ -20,9 +20,7 @@ public class EvenNumsAndEvenIndex {
             return null;
         }
         System.out.println(list.get(index));
-        index++;
-        list.remove(list.getFirst());
-        return evenIndex(list, index);
+        return evenIndex(list, index + 2);
     }
 }
 
