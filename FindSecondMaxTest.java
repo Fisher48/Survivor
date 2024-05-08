@@ -14,14 +14,14 @@ public class FindSecondMaxTest {
         assertEquals(5,FindSecondMax.findSecMax(Arrays.asList(5)));
     }
 
-    @RepeatedTest(10)
+    @RepeatedTest(100)
     public void RandomTest(){
         Random rand = new Random();
-        int N = rand.nextInt(50)+2;
+        int N = rand.nextInt(100) + 2;
         Integer[] arr = new Integer[N];
         Integer[] arr2 = new Integer[N];
         for (int i = 0; i < N; i++){
-            arr[i] = rand.nextInt(10)+1;
+            arr[i] = rand.nextInt(10) + 1;
             arr2[i] = arr[i];
         }
         Arrays.sort(arr2);
