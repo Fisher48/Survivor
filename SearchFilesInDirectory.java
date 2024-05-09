@@ -3,7 +3,6 @@ import java.util.*;
 
 public class SearchFilesInDirectory {
 
-
     public static List<File> searchFiles(File path, List<File> files, int depth) {
         if (depth == 0) {
             return files;
