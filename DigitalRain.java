@@ -25,9 +25,6 @@ public class DigitalRain {
                     temp = String.valueOf(sb);
                     sb.delete(0, sb.length());
                 } else if (one == zero) {
-                    if (sb.charAt(0) == '0') {
-                        continue;
-                    }
                     maxSubstring.add(String.valueOf(sb));
                 }
         }
