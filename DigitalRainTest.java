@@ -12,7 +12,7 @@ public class DigitalRainTest {
         assertEquals("",DigitalRain.digital_rain("11111111"));
         assertEquals("10",DigitalRain.digital_rain("011111110"));
         assertEquals("110000011110",DigitalRain.digital_rain("0110000011110"));
-
+        assertEquals("",DigitalRain.digital_rain("0000000001"));
     }
 
 }
