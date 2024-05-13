@@ -31,7 +31,7 @@ public class DigitalRain {
         if (maxSubstring.isEmpty()) {
             return "";
         } else {
-            return maxSubstring.getLast();
+            return Collections.max(maxSubstring);
         }
     }
 }
