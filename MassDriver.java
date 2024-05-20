@@ -2,10 +2,8 @@ import java.util.*;
 
 public class MassDriver {
 
-    public static int massdriver(int[] activate){
-        int numb = -1;
-        int count = 0;
-        boolean change = false;
+    public static int massdriver(int[] activate) {
+        int count = -1;
         LinkedHashMap<Integer,Integer> list = new LinkedHashMap<>();
         LinkedHashMap<Integer,Integer> index = new LinkedHashMap<>();
         for (int i = 0; i < activate.length; i++) {
@@ -14,18 +12,13 @@ public class MassDriver {
                 if (index.get(activate[i]) == 0) {
                     return index.get(activate[i]);
                 }
-                if (index.get(activate[i]) <= count || count == 0) {
+                if (index.get(activate[i]) <= count || count == -1) {
                     count = index.get(activate[i]);
-                    change = true;
                 }
             }
             index.put(activate[i],i);
         }
-        if (!change) {
-            return numb;
-        } else {
-            return count;
-        }
+        return count;
     }
 }
 
