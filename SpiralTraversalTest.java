@@ -10,9 +10,9 @@ public class SpiralTraversalTest {
     public void SampleTest() {
         int n = 4;
         int m = 4;
-        int[][] matrxi1 = { {1,2,3,4}, {5,6,7,8}, {9,10,11,12}, {13,14,15,16} };
+        int[][] matrix1 = { {1,2,3,4}, {5,6,7,8}, {9,10,11,12}, {13,14,15,16} };
         int[] matrix2 = {1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10};
-        assertArrayEquals(matrix2,SpiralTraversal.matrix(m,n,matrxi1));
+        assertArrayEquals(matrix2,SpiralTraversal.matrix(m,n,matrix1));
     }
 
     @RepeatedTest(100)
