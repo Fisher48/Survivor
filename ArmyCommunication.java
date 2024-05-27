@@ -12,7 +12,7 @@ public class ArmyCommunication {
                         currSum += matrix[i][j];
                     }
                 }
-                if (prevSum < currSum || s.isEmpty()) {
+                if (prevSum < currSum) {
                     prevSum = currSum;
                     s = l + " " + k + " " + m;
                 }
