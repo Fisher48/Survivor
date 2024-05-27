@@ -1,38 +1,31 @@
 public class ArmyCommunication {
 
-    public static String findSubMatrix(String s, int colum, int row, int prevSum, int currSum, int n, int[][]matrix) {
-        StringBuffer sb = new StringBuffer();
-        if (colum == 0 && row == 1) {
+    public static String findSubMatrix(String s, int m, int prevSum, int n, int[][]matrix) {
+        if (m == n) {
             return s;
         }
-        else if (colum == 1 && row == 1) {
-            colum--;
-        }
-        else if (colum == 1) {
-            row++;
-        }
-        else if (colum == 0 && (!s.isEmpty())) {
-            colum++;
-        }
-        for (int i = row; i < n + row; i++){
-            for (int j = colum; j < n + colum; j++){
-                currSum += matrix[i][j];
+        for (int k = 0; k < n - m + 1; k++) {
+            for (int l = 0; l < n - m + 1; l++) {
+                int currSum = 0;
+                for (int i = k; i < m + k; i++) {
+                    for (int j = l; j < m + l; j++) {
+                        currSum += matrix[i][j];
+                    }
+                }
+                if (prevSum < currSum || s.isEmpty()) {
+                    prevSum = currSum;
+                    s = l + " " + k + " " + m;
+                }
             }
         }
-        if (prevSum < currSum || s.isEmpty()) {
-            sb.append(colum + " " + row + " " + n);
-            prevSum = currSum;
-            s = sb.toString();
-        }
-        return findSubMatrix(s,colum,row,prevSum,0,n,matrix);
+        return findSubMatrix(s, m + 1, prevSum, n, matrix);
     }
 
     public static String army_communication_matrix(int n, int [][] matrix) {
         String s = "";
-        int row = 0;
-        int colum = 0;
-        int currSum = 0;
-        int prevSum = 0;
-        return findSubMatrix(s,row,colum,prevSum,currSum,n-1,matrix);
+        if (n == 2) {
+            return "0 0 2";
+        }
+        return findSubMatrix(s, 2, 0, n, matrix);
     }
 }
