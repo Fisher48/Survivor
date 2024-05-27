@@ -4,12 +4,24 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ArmyCommunicationTest {
 
     @Test
+    public void TwoOnTwoMatrixTest() {
+        int n = 2;
+        int[][] matrix = {
+                {-2,3},
+                {8,-9}
+        };
+        String s = "0 0 2";
+        assertEquals(s,ArmyCommunication.army_communication_matrix(n,matrix));
+    }
+
+    @Test
     public void SampleTest() {
         int n = 3;
         int[][] matrix = {
                 {1,2,3},
                 {4,5,6},
-                {7,8,9} };
+                {7,8,9}
+        };
         String s = "1 1 2";
         assertEquals(s,ArmyCommunication.army_communication_matrix(n,matrix));
     }
@@ -21,7 +33,8 @@ public class ArmyCommunicationTest {
                 {1,9,2,3},
                 {4,8,5,6},
                 {0,7,1,2},
-                {0,0,0,0} };
+                {0,0,0,0}
+        };
         String s = "1 0 3";
         assertEquals(s,ArmyCommunication.army_communication_matrix(n,matrix));
     }
