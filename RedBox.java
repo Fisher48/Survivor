@@ -7,18 +7,18 @@ public class Level1 {
 
             char[] x = s.toCharArray();
             String z = s.replaceAll(" ","");
-            int N = z.length();
-            double sqrtN = Math.sqrt(N);
+            int lenStringWithoutSpace = z.length();
+            double sqrtN = Math.sqrt(lenStringWithoutSpace);
             int colum = (int) (sqrtN * 10  % 10);
             int row = (int) (sqrtN);
 
                 if (row <= colum) {
-                    while (row * colum < N) {
+                    while (row * colum < lenStringWithoutSpace) {
                         row += 1;
                     }
                 }
                 if (colum <= row) {
-                    while (row * colum < N) {
+                    while (row * colum < lenStringWithoutSpace) {
                         colum += 1;
                     }
                 }
@@ -27,7 +27,7 @@ public class Level1 {
             int countX = 0;
             for (int i = 0; i < row; i++) {
                 for (int j = 0; j < colum; j++) {
-                    if (countX == N) {
+                    if (countX == lenStringWithoutSpace) {
                         break;
                     }
                     matrix[i][j] = z.charAt(countX);
@@ -36,7 +36,7 @@ public class Level1 {
             }
 
             countX = 0;
-            char[] decode = new char[N + colum];
+            char[] decode = new char[lenStringWithoutSpace + colum];
             for (int i = 0; i < colum; i++) {
                 for (int j = 0; j < row; j++) {
                     if (matrix[j][i] == 0) {

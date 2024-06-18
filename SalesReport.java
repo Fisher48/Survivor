@@ -30,18 +30,18 @@ public class Level1 {
             x++;
         }
 
-        String[] sorted = new String[listOfItems.size()];
+        String[] groupedSalesSummary = new String[listOfItems.size()];
         for (int i = 0; i < listOfItems.size(); i++) {
-            sorted[i] = listOfItems.get(i);
-            sorted[i] += " " + values.get(i);
+            groupedSalesSummary[i] = listOfItems.get(i);
+            groupedSalesSummary[i] += " " + values.get(i);
         }
 
         int maxV = 0;
         String maxS = "";
         int tempV = 0;
         String tempS = "";
-        for (int i = 0; i < sorted.length; i++) {
-            for (int j = i; j < sorted.length; j++) {
+        for (int i = 0; i < groupedSalesSummary.length; i++) {
+            for (int j = i; j < groupedSalesSummary.length; j++) {
                 if (values.get(i).equals(values.get(j)) && (listOfItems.get(i).compareTo(listOfItems.get(j)) > 0)) {
                     maxV = values.get(j);
                     tempV = values.get(i);
@@ -65,10 +65,10 @@ public class Level1 {
             }
         }
         for (int i = 0; i < listOfItems.size(); i++) {
-            sorted[i] = listOfItems.get(i);
-            sorted[i] += " " + values.get(i);
+            groupedSalesSummary[i] = listOfItems.get(i);
+            groupedSalesSummary[i] += " " + values.get(i);
         }
-        return sorted;
+        return groupedSalesSummary;
     }
 }
 

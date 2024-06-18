@@ -2,33 +2,33 @@ import java.util.*;
 
 public class Level1 {
     public static int[] WordSearch(int len, String s, String subs) {
-        int countW = 0;
-        int countI = 0;
-        int countE = 0;
+        int countOfCharsInSubstring = 0;
+        int substringStartIndex = 0;
+        int substringEndIndex = 0;
         ArrayList<String> list = new ArrayList<>();
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == ' ') {
-                countE = i + 1;
+                substringEndIndex = i + 1;
             }
-            if (countI >= countE && countW >= len) {
-                list.add(s.substring(countI, i));
-                countI = i;
-                countW = 0;
+            if (substringStartIndex >= substringEndIndex && countOfCharsInSubstring >= len) {
+                list.add(s.substring(substringStartIndex, i));
+                substringStartIndex = i;
+                countOfCharsInSubstring = 0;
             }
-            if (countW >= len && s.charAt(i) != ' ') {
-                list.add(s.substring(countI, countE));
-                countI = countE;
-                countW = i - countE;
+            if (countOfCharsInSubstring >= len && s.charAt(i) != ' ') {
+                list.add(s.substring(substringStartIndex, substringEndIndex));
+                substringStartIndex = substringEndIndex;
+                countOfCharsInSubstring = i - substringEndIndex;
             }
-            if (countW >= len) {
-                list.add(s.substring(countI, countE));
-                countI = countE;
-                countW = i - countE;
+            if (countOfCharsInSubstring >= len) {
+                list.add(s.substring(substringStartIndex, substringEndIndex));
+                substringStartIndex = substringEndIndex;
+                countOfCharsInSubstring = i - substringEndIndex;
             }
             if (i == s.length() - 1) {
-                list.add(s.substring(countI, i + 1));
+                list.add(s.substring(substringStartIndex, i + 1));
             }
-            countW++;
+            countOfCharsInSubstring++;
         }
 
         int[] FindWord = new int[list.size()];
