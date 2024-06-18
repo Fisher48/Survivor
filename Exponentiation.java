@@ -1,12 +1,12 @@
 public class Exponentiation {
 
-    public static int expon(int N, int M){
-        if (M > 1) {
-            M--;
-            int temp = N;
-            N *= expon(temp, M);
+    public static int expon(int number, int degree){
+        if (degree > 1) {
+            degree--;
+            int temp = number;
+            number *= expon(temp, degree);
         }
-        return N;
+        return number;
     }
 
     public static int sumOfTheDigits(int N) {
