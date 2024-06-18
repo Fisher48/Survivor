@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Level1 {
+public class Sherlock {
 
     public static int sumOfChars(char[] check) {
         int x = 0;

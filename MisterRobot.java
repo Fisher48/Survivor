@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Level1 {
+public class MisterRobot {
 
     public static int[] func(int[] temp){
         int x = 0;
@@ -20,20 +20,17 @@ public class Level1 {
         int[] temp = new int[3];
         int[] sort = Arrays.copyOf(data, data.length);
 
-        boolean change = true;
         for (int i = 0; i < N; i++) {
             if (i < N - 2) {
                 if (data[i] < data[i + 1] && data[i + 1] > data[i + 2] && data[i + 2] < data[i]) {
                     temp[0] = data[i];
                     temp[1] = data[i + 1];
                     temp[2] = data[i + 2];
-                    if (change) {
-                        func(temp);
-                        data[i] = temp[0];
-                        data[i + 1] = temp[1];
-                        data[i + 2] = temp[2];
-                        i -= i + 1;
-                    }
+                    func(temp);
+                    data[i] = temp[0];
+                    data[i + 1] = temp[1];
+                    data[i + 2] = temp[2];
+                    i -= i + 1;
                 } else if (data[i] > data[i + 1] && data[i] < data[i + 2] && data[i + 1] < data[i + 2]) {
                     return false;
                 }

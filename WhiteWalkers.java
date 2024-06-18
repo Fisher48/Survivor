@@ -1,9 +1,9 @@
 import java.util.*;
 
-public class Level1 {
+public class WhiteWalkers {
 
     public static boolean white_walkers(String village){
-        boolean find = false;
+        boolean found = false;
         int walkers = 0;
         int curr = 0;
         int prev = 0;
@@ -34,14 +34,14 @@ public class Level1 {
                 continue;
             }
             if (walkers >= 3) {
-                find = true;
+                found = true;
             } else {
-                find = false;
+                found = false;
             }
             sum = 0;
             walkers = 0;
         }
-        return find;
+        return found;
     }
 }
 
