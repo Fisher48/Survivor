@@ -1,11 +1,11 @@
 import java.util.*;
 
-public class Level1 {
+public class Election {
 
     public static String MassVote(int N, int [] Votes) {
         String winner = "winner ";
         int K = 0;
-        boolean win = true;
+        boolean isOneWinner = true;
         int sumOfVotesOnElection = 0;
         int max = 0;
         double percent;
@@ -24,13 +24,13 @@ public class Level1 {
                 countWinners += 1;
             }
             if (countWinners > 1) {
-                win = false;
+                isOneWinner = false;
             }
         }
 
         percent = (int) (max * 1.0 / sumOfVotesOnElection * 100000.0) / 1000.0;
 
-        if (!win) {
+        if (!isOneWinner) {
             return "no winner";
         }
         if (percent > 50.0) {

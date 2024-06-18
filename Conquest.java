@@ -1,8 +1,8 @@
 import java.util.*;
-public class Level1 {
+public class Conquest {
     public static int ConquestCampaign(int N, int M, int L, int[] battalion) {
         int days = 1;
-        boolean flag = false;
+        boolean isCaptured = false;
         int[][] square = new int[N][M];
         int expectedSum = N * M;
         int sum = 0;
@@ -18,9 +18,9 @@ public class Level1 {
             }
         }
         if (sum == expectedSum) {
-            flag = true;
+            isCaptured = true;
         }
-        while (!flag) {
+        while (!isCaptured) {
             for (int i = 0; i <= N - 1; i++) {
                 for (int j = 0; j <= M - 1; j++) {
                     if (square[i][j] == days) {
@@ -130,11 +130,11 @@ public class Level1 {
             }
             days++;
 
-            flag = true;
+            isCaptured = true;
             for (int i = 0; i <= N - 1; i++) {
                 for (int j = 0; j <= M - 1; j++) {
                     if (square[i][j] == 0) {
-                        flag = false;
+                        isCaptured = false;
                         break;
                     }
                 }

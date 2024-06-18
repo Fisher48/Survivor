@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Level1 {
+public class ChubakaTransform {
 
     public static List<Integer> Transform(int[] A){
         ArrayList<Integer> B = new ArrayList<>();

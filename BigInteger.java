@@ -1,28 +1,28 @@
 import java.util.*;
 
-public class Level1 {
+public class BigInteger {
     public static String BigMinus(String s1, String s2) {
         String diff = "";
         char[] c1 = s1.toCharArray();
         char[] c2 = s2.toCharArray();
         int len = 0;
-        boolean x = true;
+        boolean isDiffPositive = true;
         if (s1.equals(s2)) {
             return diff = "0";
         }
         if (s1.length() == s2.length()) {
-            boolean big = true;
+            boolean isFirstBigger = true;
             for (int i = 0; i < s1.length(); i++) {
                 if (s1.charAt(i) > s2.charAt(i)) {
-                    big = true;
+                    isFirstBigger = true;
                     break;
                 } else if (s2.charAt(i) >  s1.charAt(i)) {
-                    big = false;
+                    isFirstBigger = false;
                     break;
                 }
             }
 
-            if (big) {
+            if (isFirstBigger) {
                 len = c1.length;
                 char[] c3 = new char[len];
 
@@ -32,9 +32,9 @@ public class Level1 {
 
                 for (int i = len - 1; i >= 0; i--) {
                     if (c3[i] == 0) {
-                        if (!x) {
+                        if (!isDiffPositive) {
                             c1[i] -= 1;
-                            x = true;
+                            isDiffPositive = true;
                             if (c1[i] == '0') {
                                 continue;
                             }
@@ -42,25 +42,25 @@ public class Level1 {
                         diff += c1[i];
                         continue;
                     }
-                    if (!x) {
+                    if (!isDiffPositive) {
                         c1[i] -= 1;
                     }
                     if (c1[i] - c3[i] > 0) {
                         diff += c1[i] - c3[i];
-                        x = true;
+                        isDiffPositive = true;
                         continue;
                     } else if (c1[i] == c3[i]) {
                         diff += 0;
-                        x = true;
+                        isDiffPositive = true;
                         continue;
                     }
                     if (c1[i] - c3[i] < 0) {
                         diff += c1[i] + 10 - c3[i];
-                        x = false;
+                        isDiffPositive = false;
                     }
                 }
             }
-            if (!big) {
+            if (!isFirstBigger) {
                 len = c2.length;
                 char[] c3 = new char[len];
 
@@ -70,9 +70,9 @@ public class Level1 {
 
                 for (int i = len - 1; i >= 0; i--) {
                     if (c3[i] == 0) {
-                        if (!x) {
+                        if (!isDiffPositive) {
                             c2[i] -= 1;
-                            x = true;
+                            isDiffPositive = true;
                             if (c2[i] == '0') {
                                 continue;
                             }
@@ -80,20 +80,20 @@ public class Level1 {
                         diff += c2[i];
                         continue;
                     }
-                    if (!x) {
+                    if (!isDiffPositive) {
                         c2[i] -= 1;
                     }
                     if (c2[i] - c3[i] > 0) {
                         diff += c2[i] - c3[i];
-                        x = true;
+                        isDiffPositive = true;
                         continue;
                     } else if (c2[i] - c3[i] == 0) {
-                        x = true;
+                        isDiffPositive = true;
                         continue;
                     }
                     if (c2[i] - c3[i] < 0) {
                         diff += c2[i] + 10 - c3[i];
-                        x = false;
+                        isDiffPositive = false;
                     }
                 }
             }
@@ -108,9 +108,9 @@ public class Level1 {
 
             for (int i = len - 1; i >= 0; i--) {
                 if (c3[i] == 0) {
-                    if (!x) {
+                    if (!isDiffPositive) {
                         c1[i] -= 1;
-                        x = true;
+                        isDiffPositive = true;
                         if (c1[i] == '0') {
                             continue;
                         }
@@ -118,17 +118,17 @@ public class Level1 {
                     diff += c1[i];
                     continue;
                 }
-                if (!x) {
+                if (!isDiffPositive) {
                     c1[i] -= 1;
                 }
                 if (c1[i] >= c3[i]) {
                     diff += c1[i] - c3[i];
-                    x = true;
+                    isDiffPositive = true;
                     continue;
                 }
                 if (c1[i] <= c3[i]) {
                     diff += c1[i] + 10 - c3[i];
-                    x = false;
+                    isDiffPositive = false;
                 }
             }
         }
@@ -142,9 +142,9 @@ public class Level1 {
 
             for (int i = len - 1; i >= 0; i--) {
                 if (c3[i] == 0) {
-                    if (!x) {
+                    if (!isDiffPositive) {
                         c2[i] -= 1;
-                        x = true;
+                        isDiffPositive = true;
                         if (c2[i] == '0') {
                             continue;
                         }
@@ -152,17 +152,17 @@ public class Level1 {
                     diff += c2[i];
                     continue;
                 }
-                if (!x) {
+                if (!isDiffPositive) {
                     c2[i] -= 1;
                 }
                 if (c2[i] >= c3[i]) {
                     diff += c2[i] - c3[i];
-                    x = true;
+                    isDiffPositive = true;
                     continue;
                 }
                 if (c2[i] <= c3[i]) {
                     diff += c2[i] + 10 - c3[i];
-                    x = false;
+                    isDiffPositive = false;
                 }
             }
         }

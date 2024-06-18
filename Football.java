@@ -96,7 +96,7 @@ public class Football {
 
     public static boolean Football(int F[], int N){
         int[] temp = new int[N];
-        boolean win = false;
+        boolean success = false;
         for (int i = 0; i < N; i++) {
             temp[i] = F[i];
         }
@@ -104,11 +104,11 @@ public class Football {
         if (Arrays.equals(temp, F)){
             return false;
         }
-        win = first(F, N);
-        if (!win) {
-            win = second(F,N);
+        success = first(F, N);
+        if (!success) {
+            success = second(F,N);
         }
-        return win;
+        return success;
     }
 }
 
