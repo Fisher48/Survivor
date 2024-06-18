@@ -29,11 +29,11 @@ public class Level1 {
         }
         List<Integer> B2 = Transform(temp);
         boolean check = false;
-        int sumOfAllValuesAfterDoubleTransformation = 0;
+        int sumAfterDoubleTransf = 0;
         for (int i = 0; i < B2.size(); i++){
-            sumOfAllValuesAfterDoubleTransformation += B2.get(i);
+            sumAfterDoubleTransf += B2.get(i);
         }
-        if (sumOfAllValuesAfterDoubleTransformation % 2 == 0) {
+        if (sumAfterDoubleTransf % 2 == 0) {
             check = true;
         }
         return check;

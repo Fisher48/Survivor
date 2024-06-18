@@ -5,7 +5,7 @@ public class Level1 {
     public static String BiggerGreater(String input) {
         StringBuffer output = new StringBuffer();
         output.append(input);
-        List<String> listOfLexicographicalPermutationOfAWord = new ArrayList<>();
+        List<String> listOfRearrangeWord = new ArrayList<>();
         char[] x = input.toCharArray();
         char temp;
         String s = "";
@@ -17,15 +17,15 @@ public class Level1 {
                 x[j] = temp;
                 sb.append(x);
                 if (sb.compareTo(output) > 0) {
-                    listOfLexicographicalPermutationOfAWord.add(String.valueOf(sb));
+                    listOfRearrangeWord.add(String.valueOf(sb));
                 }
             }
         }
-        if (listOfLexicographicalPermutationOfAWord.isEmpty()) {
+        if (listOfRearrangeWord.isEmpty()) {
             return s;
         }
-        Collections.sort(listOfLexicographicalPermutationOfAWord);
-        return listOfLexicographicalPermutationOfAWord.getFirst();
+        Collections.sort(listOfRearrangeWord);
+        return listOfRearrangeWord.getFirst();
     }
 }
 
