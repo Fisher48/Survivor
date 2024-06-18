@@ -7,52 +7,52 @@ public class Level1 {
         phone[1][0] = 5; phone[1][1] = 2; phone[1][2] = 8;
         phone[2][0] = 4; phone[2][1] = 3; phone[2][2] = 7;
         double temp;
-        double sum = 0;
+        double lengthOfTheLineDrawnDuringCodeBreakingProcess = 0;
 
         for (int i = 0; i < N-1; i++) {
             for (int j = 0; j < phone.length; j++) {
                 for (int k = 0; k < phone[j].length; k++) {
                     if (hits[i] == phone[j][k] && k - 1 <= 2 && k - 1 >= 0 && phone[j][k - 1] == hits[i + 1]){
                         temp = 1;
-                        sum += temp;
+                        lengthOfTheLineDrawnDuringCodeBreakingProcess += temp;
                     }
                     if (hits[i] == phone[j][k] && j + 1 <= 2 && j + 1 >= 0 && phone[j + 1][k] == hits[i + 1]){
                         temp = 1;
-                        sum += temp;
+                        lengthOfTheLineDrawnDuringCodeBreakingProcess += temp;
                     }
                     if (hits[i] == phone[j][k] && k + 1 <= 2 && k + 1 >= 0 && phone[j][k + 1] == hits[i + 1]){
                         temp = 1;
-                        sum += temp;
+                        lengthOfTheLineDrawnDuringCodeBreakingProcess += temp;
                     }
                     if (hits[i] == phone[j][k] && j - 1 <= 2 && j - 1 >= 0 && phone[j - 1][k] == hits[i + 1]){
                         temp = 1;
-                        sum += temp;
+                        lengthOfTheLineDrawnDuringCodeBreakingProcess += temp;
                     }
                     if (hits[i] == phone[j][k] && (j - 1 <= 2 && j - 1 >= 0 && k - 1 <= 2 && k - 1 >= 0)
                             && phone[j - 1][k - 1] == hits[i + 1]){
                         temp = Math.sqrt(2);
-                        sum += temp;
+                        lengthOfTheLineDrawnDuringCodeBreakingProcess += temp;
                     }
                     if (hits[i] == phone[j][k] && (j - 1 <= 2 && j - 1 >= 0 && k + 1 <= 2 && k + 1 >= 0)
                             && phone[j - 1][k + 1] == hits[i + 1]){
                         temp = Math.sqrt(2);
-                        sum += temp;
+                        lengthOfTheLineDrawnDuringCodeBreakingProcess += temp;
                     }
                     if (hits[i] == phone[j][k] && (j + 1 <= 2 && j + 1 >= 0 && k + 1 <= 2 && k + 1 >= 0)
                             && phone[j + 1][k + 1] == hits[i + 1]){
                         temp = Math.sqrt(2);
-                        sum += temp;
+                        lengthOfTheLineDrawnDuringCodeBreakingProcess += temp;
                     }
                     if (hits[i] == phone[j][k] && (j + 1 <= 2 && j + 1 >= 0 && k - 1 <= 2 && k - 1 >= 0)
                             && phone[j + 1][k - 1] == hits[i + 1]){
                         temp = Math.sqrt(2);
-                        sum += temp;
+                        lengthOfTheLineDrawnDuringCodeBreakingProcess += temp;
                     }
                 }
             }
         }
-        String result = String.format("%.5f",sum);
-        if (sum == 0) {
+        String result = String.format("%.5f",lengthOfTheLineDrawnDuringCodeBreakingProcess);
+        if (lengthOfTheLineDrawnDuringCodeBreakingProcess == 0) {
             result = "";
             return result;
         }

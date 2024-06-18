@@ -6,12 +6,12 @@ public class Level1 {
         String winner = "winner ";
         int K = 0;
         boolean win = true;
-        int sumOfVotes = 0;
+        int sumOfVotesOnElection = 0;
         int max = 0;
         double percent;
 
         for (int i = 0; i < N; i++) {
-            sumOfVotes += Votes[i];
+            sumOfVotesOnElection += Votes[i];
             if (Votes[i] >= max) {
                 max = Votes[i];
                 K = i + 1;
@@ -28,7 +28,7 @@ public class Level1 {
             }
         }
 
-        percent = (int) (max * 1.0 / sumOfVotes * 100000.0) / 1000.0;
+        percent = (int) (max * 1.0 / sumOfVotesOnElection * 100000.0) / 1000.0;
 
         if (!win) {
             return "no winner";
