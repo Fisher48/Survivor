@@ -4,7 +4,7 @@ public class Election {
 
     public static String MassVote(int N, int [] Votes) {
         String winner = "winner ";
-        int K = 0;
+        int possibleCandidate = 0;
         boolean isOneWinner = true;
         int sumOfVotesOnElection = 0;
         int max = 0;
@@ -14,7 +14,7 @@ public class Election {
             sumOfVotesOnElection += Votes[i];
             if (Votes[i] >= max) {
                 max = Votes[i];
-                K = i + 1;
+                possibleCandidate = i + 1;
             }
         }
 
@@ -34,10 +34,10 @@ public class Election {
             return "no winner";
         }
         if (percent > 50.0) {
-            return  "majority " + winner + K;
+            return  "majority " + winner + possibleCandidate;
         }
         if (percent <= 50.0) {
-            return  "minority " + winner + K;
+            return  "minority " + winner + possibleCandidate;
         }
         return winner;
     }
