@@ -57,16 +57,16 @@ public class Sherlock {
             num[i] = (sumOfChars(check));
         }
 
-        boolean checkChars = true;
+        boolean isValid = true;
 
         for (int i = 0; i < num.length-1; i++) {
             if (num[i] != num[i + 1]) {
-                checkChars = false;
+                isValid = false;
                 break;
             }
         }
 
-        if (checkChars) {
+        if (isValid) {
             return true;
         }
 
@@ -79,7 +79,7 @@ public class Sherlock {
             }
         }
 
-        return checkChars;
+        return isValid;
     }
 }
 
