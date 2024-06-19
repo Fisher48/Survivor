@@ -16,7 +16,7 @@ public class Level1 {
         int prev;
         int curr;
 
-        for (int x = 0; x < T; x++) {
+        for (int step = 0; step < T; step++) {
             row = 0;
             colum = 0;
             M = digitsMatrix.length;
