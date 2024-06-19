@@ -2,9 +2,7 @@ public class Exponentiation {
 
     public static int expon(int number, int degree){
         if (degree > 1) {
-            degree--;
-            int temp = number;
-            number *= expon(temp, degree);
+            number *= expon(number, degree-1);
         }
         return number;
     }
