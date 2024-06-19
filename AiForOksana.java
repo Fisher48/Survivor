@@ -9,12 +9,11 @@ public class Level1 {
             sumOfAllOtherNumbers = data[i];
             temp = sumOfAllOtherNumbers;
             data[i] = 0;
-            for (int j = 0; j < N; j++){
+            for (int j = 0; j < N; j++) {
                 x += data[j];
-
             }
             if (x == sumOfAllOtherNumbers) {
-                 return sumOfAllOtherNumbers;
+                return sumOfAllOtherNumbers;
             }
             data[i] = temp;
             x = 0;
