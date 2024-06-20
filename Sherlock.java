@@ -2,10 +2,10 @@ import java.util.*;
 
 public class Sherlock {
 
-    public static int sumOfChars(char[] check) {
+    public static int sumOfChars(char[] checkSumOfChars) {
         int x = 0;
-        for (int i = 0; i < check.length; i++) {
-            x += Integer.parseInt(String.valueOf(check[i]));
+        for (int i = 0; i < checkSumOfChars.length; i++) {
+            x += Integer.parseInt(String.valueOf(checkSumOfChars[i]));
         }
         return x;
     }
@@ -23,31 +23,29 @@ public class Sherlock {
 
 
     public static boolean SherlockValidString(String s){
-        char[] x = s.toCharArray();
-        List<String> listOfChars = new ArrayList<>();
         List<String> withoutDuplicates = new ArrayList<>();
-        for (int j = 0; j < x.length; j++) {
-            for (int i = 0; i < x.length; i++) {
-                if (x[i] == x[j] && !withoutDuplicates.contains((String.valueOf(x[j])))) {
-                    withoutDuplicates.add(String.valueOf(x[j]));
+        for (int j = 0; j < s.length(); j++) {
+            for (int i = 0; i < s.length(); i++) {
+                if (s.charAt(i) == s.charAt(j) && !withoutDuplicates.contains((String.valueOf(s.charAt(j))))) {
+                    withoutDuplicates.add(String.valueOf(s.charAt(j)));
                     break;
                 }
             }
         }
-        listOfChars.addAll(withoutDuplicates);
+        List<String> listOfChars = new ArrayList<>(withoutDuplicates);
         for (int y = 0; y < withoutDuplicates.size(); y++) {
-            for (int z = 0; z < x.length; z++) {
-                if (String.valueOf(x[z]).equals(withoutDuplicates.get(y))) {
+            for (int z = 0; z < s.length(); z++) {
+                if (String.valueOf(s.charAt(z)).equals(withoutDuplicates.get(y))) {
                     listOfChars.set(y, listOfChars.get(y)+1);
                 }
             }
         }
-        char[] check;
+        char[] checkSumOfChars;
         int[] numberOfChars = new int[listOfChars.size()];
         for (int i = 0; i < listOfChars.size(); i++) {
             listOfChars.set(i, listOfChars.get(i).substring(1));
-            check = listOfChars.get(i).toCharArray();
-            numberOfChars[i] = (sumOfChars(check));
+            checkSumOfChars = listOfChars.get(i).toCharArray();
+            numberOfChars[i] = (sumOfChars(checkSumOfChars));
         }
 
         boolean isValid = true;
