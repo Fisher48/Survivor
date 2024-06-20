@@ -42,14 +42,14 @@ public class UnlockPhone {
                 }
             }
         }
-        String result = String.format("%.5f",lenDuringDrawnCode);
+        String resultLen = String.format("%.5f",lenDuringDrawnCode);
         if (lenDuringDrawnCode == 0) {
-            result = "";
-            return result;
+            resultLen = "";
+            return resultLen;
         }
-        result = result.replaceAll(",","");
-        result = result.replaceAll("0","");
-        return result;
+        resultLen = resultLen.replaceAll(",","");
+        resultLen = resultLen.replaceAll("0","");
+        return resultLen;
     }
 }
 
