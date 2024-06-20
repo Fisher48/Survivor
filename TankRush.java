@@ -7,25 +7,15 @@ public class Level1 {
         boolean isExist = false;
 
         if (H1 >= H2 && W1 >= W2) {
-            StringBuffer[] str2 = new StringBuffer[H2];
-            String x = S2;
-            String[] str22 = S2.split(" ");
-            for (int i = 0; i < str22.length; i++) {
-                str2[i] = new StringBuffer(str22[i]);
-            }
 
-            StringBuffer[] str1 = new StringBuffer[H1];
-            String y = S1;
-            String[] str11 = S1.split(" ");
-            for (int i = 0; i < str11.length; i++) {
-                str1[i] = new StringBuffer(str11[i]);
-            }
+            String[] areaMap = S1.split(" ");
+            String[] checkZone = S2.split(" ");
 
-            for (int i = 0; i <= str1.length - str2.length; i++) {
-                int indexOfStr = str1[i].indexOf(String.valueOf(str2[0]));
-                while (str1[i].indexOf(String.valueOf(str2[0])) != -1) {
-                    for (int j = 1; j < str2.length; j++) {
-                        if (str1[i + j].toString().substring(indexOfStr, indexOfStr + str2[0].length()).equals(str2[j].toString())) {
+            for (int i = 0; i <= areaMap.length - checkZone.length; i++) {
+                int indexOfStr = areaMap[i].indexOf(String.valueOf(checkZone[0]));
+                while (areaMap[i].contains(String.valueOf(checkZone[0]))) {
+                    for (int j = 1; j < checkZone.length; j++) {
+                        if (areaMap[i + j].substring(indexOfStr, indexOfStr + checkZone[0].length()).contentEquals(checkZone[j])) {
                             isExist = true;
                         } else {
                             isExist = false;
@@ -33,12 +23,12 @@ public class Level1 {
                         }
                     }
                     if (!isExist) {
-                        String check = str1[i].substring(indexOfStr, indexOfStr + str2[0].length());
-                        if (check.equals(x)) {
+                        String check = areaMap[i].substring(indexOfStr, indexOfStr + checkZone[0].length());
+                        if (check.equals(S2)) {
                             isExist = true;
                         }
-                        str1[i].setCharAt(indexOfStr, '.');
-                        indexOfStr = str1[i].indexOf(String.valueOf(str2[0]));
+                        areaMap[i] = String.valueOf('.');
+                        indexOfStr = areaMap[i].indexOf(String.valueOf(checkZone[0]));
                     } else {
                         break;
                     }
