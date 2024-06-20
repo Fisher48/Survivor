@@ -10,21 +10,14 @@ public class Sherlock {
         return x;
     }
 
-    public static boolean checkQuantity(int[] num) {
+    public static boolean checkQuantity(int[] numberOfChars) {
         boolean isAllEqual = true;
-        List<Integer> temp = new ArrayList<>();
-        for (int i = 0; i < num.length; i++) {
-            if (num[i] != 0) {
-                temp.add(num[i]);
-            }
-        }
-        for (int j = 0; j < temp.size()-1; j++) {
-            if (!temp.get(j).equals(temp.get(j+1))) {
+        for (int i = 0; i < numberOfChars.length; i++) {
+            if (numberOfChars[i] != 0 && numberOfChars[0] != numberOfChars[i]) {
                 isAllEqual = false;
                 break;
             }
         }
-
         return isAllEqual;
     }
 
