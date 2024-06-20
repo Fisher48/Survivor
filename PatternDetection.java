@@ -3,18 +3,13 @@ import java.util.*;
 public class Level1 {
 
     public static boolean LineAnalysis(String line) {
-        String reverse = "";
+        StringBuilder reverse = new StringBuilder();
         if (line.charAt(0) != '*' || line.charAt(line.length()-1) != '*'){
             return false;
         }
-
         for (int i = line.length()-1; i >= 0; i--) {
-            reverse += String.valueOf(line.charAt(i));
+            reverse.append(line.charAt(i));
         }
-
-        if (reverse.toString().equals(line)) {
-            return true;
-        }
-        return false;
+        return reverse.toString().equals(line);
     }
 }
