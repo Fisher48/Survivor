@@ -24,7 +24,7 @@ public class Sherlock {
 
     public static boolean SherlockValidString(String s){
         char[] x = s.toCharArray();
-        List<String> list = new ArrayList<>();
+        List<String> listOfChars = new ArrayList<>();
         List<String> withoutDuplicates = new ArrayList<>();
         for (int j = 0; j < x.length; j++) {
             for (int i = 0; i < x.length; i++) {
@@ -34,19 +34,19 @@ public class Sherlock {
                 }
             }
         }
-        list.addAll(withoutDuplicates);
+        listOfChars.addAll(withoutDuplicates);
         for (int y = 0; y < withoutDuplicates.size(); y++) {
             for (int z = 0; z < x.length; z++) {
                 if (String.valueOf(x[z]).equals(withoutDuplicates.get(y))) {
-                    list.set(y, list.get(y)+1);
+                    listOfChars.set(y, listOfChars.get(y)+1);
                 }
             }
         }
         char[] check;
-        int[] numberOfChars = new int[list.size()];
-        for (int i = 0; i < list.size(); i++) {
-            list.set(i, list.get(i).substring(1));
-            check = list.get(i).toCharArray();
+        int[] numberOfChars = new int[listOfChars.size()];
+        for (int i = 0; i < listOfChars.size(); i++) {
+            listOfChars.set(i, listOfChars.get(i).substring(1));
+            check = listOfChars.get(i).toCharArray();
             numberOfChars[i] = (sumOfChars(check));
         }
 
