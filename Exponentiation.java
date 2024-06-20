@@ -11,8 +11,7 @@ public class Exponentiation {
         int sum = 0;
         if (N >= 1) {
             sum = N % 10;
-            N /= 10;
-            sum += sumOfTheDigits(N);
+            sum += sumOfTheDigits(N / 10);
         }
         return sum;
     }
