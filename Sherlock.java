@@ -11,7 +11,7 @@ public class Sherlock {
     }
 
     public static boolean checkQuantity(int[] num) {
-        boolean check = true;
+        boolean isAllEqual = true;
         List<Integer> temp = new ArrayList<>();
         for (int i = 0; i < num.length; i++) {
             if (num[i] != 0) {
@@ -20,12 +20,12 @@ public class Sherlock {
         }
         for (int j = 0; j < temp.size()-1; j++) {
             if (!temp.get(j).equals(temp.get(j+1))) {
-                check = false;
+                isAllEqual = false;
                 break;
             }
         }
 
-        return check;
+        return isAllEqual;
     }
 
 
@@ -50,17 +50,17 @@ public class Sherlock {
             }
         }
         char[] check;
-        int[] num = new int[list.size()];
+        int[] numberOfChars = new int[list.size()];
         for (int i = 0; i < list.size(); i++) {
             list.set(i, list.get(i).substring(1));
             check = list.get(i).toCharArray();
-            num[i] = (sumOfChars(check));
+            numberOfChars[i] = (sumOfChars(check));
         }
 
         boolean isValid = true;
 
-        for (int i = 0; i < num.length-1; i++) {
-            if (num[i] != num[i + 1]) {
+        for (int i = 0; i < numberOfChars.length-1; i++) {
+            if (numberOfChars[i] != numberOfChars[i + 1]) {
                 isValid = false;
                 break;
             }
@@ -70,10 +70,10 @@ public class Sherlock {
             return true;
         }
 
-        for (int i = 0; i < num.length; i++) {
-            num[i] -= 1;
-            if (!checkQuantity(num)) {
-                num[i] += 1;
+        for (int i = 0; i < numberOfChars.length; i++) {
+            numberOfChars[i] -= 1;
+            if (!checkQuantity(numberOfChars)) {
+                numberOfChars[i] += 1;
             } else {
                 return true;
             }
