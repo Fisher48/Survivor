@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class MisterRobot {
+public class Level1 {
 
     public static int[] func(int[] temp){
         int x = 0;
@@ -18,7 +18,7 @@ public class MisterRobot {
 
     public static boolean MisterRobot(int N, int[] data){
         int[] temp = new int[3];
-        int[] sort = Arrays.copyOf(data, data.length);
+        int[] sortedArray = Arrays.copyOf(data, data.length);
 
         for (int i = 0; i < N; i++) {
             if (i < N - 2) {
@@ -36,8 +36,8 @@ public class MisterRobot {
                 }
             }
         }
-        Arrays.sort(sort);
-        return Arrays.equals(sort,data);
+        Arrays.sort(sortedArray);
+        return Arrays.equals(sortedArray,data);
     }
 }
 

@@ -1,10 +1,10 @@
 import java.util.*;
 
-public class BigInteger {
+public class Level1 {
     public static String BigMinus(String s1, String s2) {
         String diff = "";
-        char[] c1 = s1.toCharArray();
-        char[] c2 = s2.toCharArray();
+        char[] firstNumber = s1.toCharArray();
+        char[] secondNumber = s2.toCharArray();
         int len = 0;
         boolean isDiffPositive = true;
         if (s1.equals(s2)) {
@@ -14,7 +14,6 @@ public class BigInteger {
             boolean isFirstBigger = true;
             for (int i = 0; i < s1.length(); i++) {
                 if (s1.charAt(i) > s2.charAt(i)) {
-                    isFirstBigger = true;
                     break;
                 } else if (s2.charAt(i) >  s1.charAt(i)) {
                     isFirstBigger = false;
@@ -23,145 +22,145 @@ public class BigInteger {
             }
 
             if (isFirstBigger) {
-                len = c1.length;
-                char[] c3 = new char[len];
+                len = firstNumber.length;
+                char[] secondNumbScaled = new char[len];
 
                 for (int i = 0; i < len; i++) {
-                    c3[i + len - c2.length] = c2[i];
+                    secondNumbScaled[i + len - secondNumber.length] = secondNumber[i];
                 }
 
                 for (int i = len - 1; i >= 0; i--) {
-                    if (c3[i] == 0) {
+                    if (secondNumbScaled[i] == 0) {
                         if (!isDiffPositive) {
-                            c1[i] -= 1;
+                            firstNumber[i] -= 1;
                             isDiffPositive = true;
-                            if (c1[i] == '0') {
+                            if (firstNumber[i] == '0') {
                                 continue;
                             }
                         }
-                        diff += c1[i];
+                        diff += firstNumber[i];
                         continue;
                     }
                     if (!isDiffPositive) {
-                        c1[i] -= 1;
+                        firstNumber[i] -= 1;
                     }
-                    if (c1[i] - c3[i] > 0) {
-                        diff += c1[i] - c3[i];
+                    if (firstNumber[i] - secondNumbScaled[i] > 0) {
+                        diff += firstNumber[i] - secondNumbScaled[i];
                         isDiffPositive = true;
                         continue;
-                    } else if (c1[i] == c3[i]) {
+                    } else if (firstNumber[i] == secondNumbScaled[i]) {
                         diff += 0;
                         isDiffPositive = true;
                         continue;
                     }
-                    if (c1[i] - c3[i] < 0) {
-                        diff += c1[i] + 10 - c3[i];
+                    if (firstNumber[i] - secondNumbScaled[i] < 0) {
+                        diff += firstNumber[i] + 10 - secondNumbScaled[i];
                         isDiffPositive = false;
                     }
                 }
             }
             if (!isFirstBigger) {
-                len = c2.length;
-                char[] c3 = new char[len];
+                len = secondNumber.length;
+                char[] firstNumbScaled = new char[len];
 
                 for (int i = 0; i < len; i++) {
-                    c3[i + len - c1.length] = c1[i];
+                    firstNumbScaled[i + len - firstNumber.length] = firstNumber[i];
                 }
 
                 for (int i = len - 1; i >= 0; i--) {
-                    if (c3[i] == 0) {
+                    if (firstNumbScaled[i] == 0) {
                         if (!isDiffPositive) {
-                            c2[i] -= 1;
+                            secondNumber[i] -= 1;
                             isDiffPositive = true;
-                            if (c2[i] == '0') {
+                            if (secondNumber[i] == '0') {
                                 continue;
                             }
                         }
-                        diff += c2[i];
+                        diff += secondNumber[i];
                         continue;
                     }
                     if (!isDiffPositive) {
-                        c2[i] -= 1;
+                        secondNumber[i] -= 1;
                     }
-                    if (c2[i] - c3[i] > 0) {
-                        diff += c2[i] - c3[i];
+                    if (secondNumber[i] - firstNumbScaled[i] > 0) {
+                        diff += secondNumber[i] - firstNumbScaled[i];
                         isDiffPositive = true;
                         continue;
-                    } else if (c2[i] - c3[i] == 0) {
+                    } else if (secondNumber[i] - firstNumbScaled[i] == 0) {
                         isDiffPositive = true;
                         continue;
                     }
-                    if (c2[i] - c3[i] < 0) {
-                        diff += c2[i] + 10 - c3[i];
+                    if (secondNumber[i] - firstNumbScaled[i] < 0) {
+                        diff += secondNumber[i] + 10 - firstNumbScaled[i];
                         isDiffPositive = false;
                     }
                 }
             }
         }
         if (s1.length() > s2.length()) {
-            len = c1.length;
-            char[] c3 = new char[len];
+            len = firstNumber.length;
+            char[] secondNumbScaled = new char[len];
 
-            for (int i = 0; i < c2.length; i++) {
-                c3[i + len - c2.length] = c2[i];
+            for (int i = 0; i < secondNumber.length; i++) {
+                secondNumbScaled[i + len - secondNumber.length] = secondNumber[i];
             }
 
             for (int i = len - 1; i >= 0; i--) {
-                if (c3[i] == 0) {
+                if (secondNumbScaled[i] == 0) {
                     if (!isDiffPositive) {
-                        c1[i] -= 1;
+                        firstNumber[i] -= 1;
                         isDiffPositive = true;
-                        if (c1[i] == '0') {
+                        if (firstNumber[i] == '0') {
                             continue;
                         }
                     }
-                    diff += c1[i];
+                    diff += firstNumber[i];
                     continue;
                 }
                 if (!isDiffPositive) {
-                    c1[i] -= 1;
+                    firstNumber[i] -= 1;
                 }
-                if (c1[i] >= c3[i]) {
-                    diff += c1[i] - c3[i];
+                if (firstNumber[i] >= secondNumbScaled[i]) {
+                    diff += firstNumber[i] - secondNumbScaled[i];
                     isDiffPositive = true;
                     continue;
                 }
-                if (c1[i] <= c3[i]) {
-                    diff += c1[i] + 10 - c3[i];
+                if (firstNumber[i] <= secondNumbScaled[i]) {
+                    diff += firstNumber[i] + 10 - secondNumbScaled[i];
                     isDiffPositive = false;
                 }
             }
         }
         if (s1.length() < s2.length()) {
-            len = c2.length;
-            char[] c3 = new char[len];
+            len = secondNumber.length;
+            char[] firstNumbScaled = new char[len];
 
-            for (int i = 0; i < c1.length; i++) {
-                c3[i + len - c1.length] = c1[i];
+            for (int i = 0; i < firstNumber.length; i++) {
+                firstNumbScaled[i + len - firstNumber.length] = firstNumber[i];
             }
 
             for (int i = len - 1; i >= 0; i--) {
-                if (c3[i] == 0) {
+                if (firstNumbScaled[i] == 0) {
                     if (!isDiffPositive) {
-                        c2[i] -= 1;
+                        secondNumber[i] -= 1;
                         isDiffPositive = true;
-                        if (c2[i] == '0') {
+                        if (secondNumber[i] == '0') {
                             continue;
                         }
                     }
-                    diff += c2[i];
+                    diff += secondNumber[i];
                     continue;
                 }
                 if (!isDiffPositive) {
-                    c2[i] -= 1;
+                    secondNumber[i] -= 1;
                 }
-                if (c2[i] >= c3[i]) {
-                    diff += c2[i] - c3[i];
+                if (secondNumber[i] >= firstNumbScaled[i]) {
+                    diff += secondNumber[i] - firstNumbScaled[i];
                     isDiffPositive = true;
                     continue;
                 }
-                if (c2[i] <= c3[i]) {
-                    diff += c2[i] + 10 - c3[i];
+                if (secondNumber[i] <= firstNumbScaled[i]) {
+                    diff += secondNumber[i] + 10 - firstNumbScaled[i];
                     isDiffPositive = false;
                 }
             }

@@ -4,11 +4,11 @@ public class Level1 {
 
     public static void MatrixTurn(String Matrix[], int M, int N, int T) {
         int[][] digitsMatrix = new int[M][N];
-        char[] arr;
+        char[] stringToInteger;
         for (int i = 0; i < M; i++) {
-            arr = Matrix[i].toCharArray();
+            stringToInteger = Matrix[i].toCharArray();
             for (int j = 0; j < N; j++) {
-                digitsMatrix[i][j] = Integer.parseInt(String.valueOf(arr[j]));
+                digitsMatrix[i][j] = Integer.parseInt(String.valueOf(stringToInteger[j]));
             }
         }
         int row = 0;

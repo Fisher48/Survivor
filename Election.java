@@ -7,20 +7,20 @@ public class Election {
         int possibleCandidate = 0;
         boolean isOneWinner = true;
         int sumOfVotesOnElection = 0;
-        int max = 0;
+        int maxVotes = 0;
         double percent;
 
         for (int i = 0; i < N; i++) {
             sumOfVotesOnElection += Votes[i];
-            if (Votes[i] >= max) {
-                max = Votes[i];
+            if (Votes[i] >= maxVotes) {
+                maxVotes = Votes[i];
                 possibleCandidate = i + 1;
             }
         }
 
         int countWinners = 0;
         for (Integer j: Votes) {
-            if (j == max) {
+            if (j == maxVotes) {
                 countWinners += 1;
             }
             if (countWinners > 1) {
@@ -28,7 +28,7 @@ public class Election {
             }
         }
 
-        percent = (int) (max * 1.0 / sumOfVotesOnElection * 100000.0) / 1000.0;
+        percent = (int) (maxVotes * 1.0 / sumOfVotesOnElection * 100000.0) / 1000.0;
 
         if (!isOneWinner) {
             return "no winner";

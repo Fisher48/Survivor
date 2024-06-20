@@ -3,37 +3,36 @@ import java.util.*;
 public class Level1 {
 
     public static String [] ShopOLAP(int N, String [] items) {
-        String temp = "";
+        String item = "";
         List<String> listOfItems = new ArrayList<>();
-        List<Integer> values = new ArrayList<>();
-
+        List<Integer> numbOfSoldPieces = new ArrayList<>();
         Arrays.sort(items);
         for (int k = 0; k < N; k++) {
-            temp = items[k];
-            for (int i = 0; i < temp.length(); i++) {
-                if (temp.charAt(i) == ' ') {
-                    listOfItems.add(temp.substring(0, i));
-                    values.add(Integer.valueOf(temp.substring(i + 1)));
+            item = items[k];
+            for (int i = 0; i < item.length(); i++) {
+                if (item.charAt(i) == ' ') {
+                    listOfItems.add(item.substring(0, i));
+                    numbOfSoldPieces.add(Integer.valueOf(item.substring(i + 1)));
                 }
             }
         }
 
-        int x = 0;
-        while (x < N - 1) {
-            if (listOfItems.get(x).equals(listOfItems.get(x + 1))) {
-                values.set(x, values.get(x) + values.get(x + 1));
-                listOfItems.remove(x + 1);
-                values.remove(x + 1);
+        int countOfItems = 0;
+        while (countOfItems < N - 1) {
+            if (listOfItems.get(countOfItems).equals(listOfItems.get(countOfItems + 1))) {
+                numbOfSoldPieces.set(countOfItems, numbOfSoldPieces.get(countOfItems) + numbOfSoldPieces.get(countOfItems + 1));
+                listOfItems.remove(countOfItems + 1);
+                numbOfSoldPieces.remove(countOfItems + 1);
                 N--;
-                x--;
+                countOfItems--;
             }
-            x++;
+            countOfItems++;
         }
 
         String[] groupedSalesSummary = new String[listOfItems.size()];
         for (int i = 0; i < listOfItems.size(); i++) {
             groupedSalesSummary[i] = listOfItems.get(i);
-            groupedSalesSummary[i] += " " + values.get(i);
+            groupedSalesSummary[i] += " " + numbOfSoldPieces.get(i);
         }
 
         int maxV = 0;
@@ -42,23 +41,23 @@ public class Level1 {
         String tempS = "";
         for (int i = 0; i < groupedSalesSummary.length; i++) {
             for (int j = i; j < groupedSalesSummary.length; j++) {
-                if (values.get(i).equals(values.get(j)) && (listOfItems.get(i).compareTo(listOfItems.get(j)) > 0)) {
-                    maxV = values.get(j);
-                    tempV = values.get(i);
+                if (numbOfSoldPieces.get(i).equals(numbOfSoldPieces.get(j)) && (listOfItems.get(i).compareTo(listOfItems.get(j)) > 0)) {
+                    maxV = numbOfSoldPieces.get(j);
+                    tempV = numbOfSoldPieces.get(i);
                     maxS = listOfItems.get(j);
                     tempS = listOfItems.get(i);
-                    values.set(i, maxV);
-                    values.set(j, tempV);
+                    numbOfSoldPieces.set(i, maxV);
+                    numbOfSoldPieces.set(j, tempV);
                     listOfItems.set(i, maxS);
                     listOfItems.set(j, tempS);
                 }
-                if (values.get(i) < values.get(j)) {
-                    maxV = values.get(j);
-                    tempV = values.get(i);
+                if (numbOfSoldPieces.get(i) < numbOfSoldPieces.get(j)) {
+                    maxV = numbOfSoldPieces.get(j);
+                    tempV = numbOfSoldPieces.get(i);
                     maxS = listOfItems.get(j);
                     tempS = listOfItems.get(i);
-                    values.set(i, maxV);
-                    values.set(j, tempV);
+                    numbOfSoldPieces.set(i, maxV);
+                    numbOfSoldPieces.set(j, tempV);
                     listOfItems.set(i, maxS);
                     listOfItems.set(j, tempS);
                 }
@@ -66,7 +65,7 @@ public class Level1 {
         }
         for (int i = 0; i < listOfItems.size(); i++) {
             groupedSalesSummary[i] = listOfItems.get(i);
-            groupedSalesSummary[i] += " " + values.get(i);
+            groupedSalesSummary[i] += " " + numbOfSoldPieces.get(i);
         }
         return groupedSalesSummary;
     }
