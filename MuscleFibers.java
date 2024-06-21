@@ -1,6 +1,6 @@
 public class MuscleFibers {
 
-    public static int artificial_muscle_fibers(int[] arr) {
+    public static int getDuplicates(int[] arr) {
 
         byte[] buffer = new byte[8192];
         int duplicates = 0;

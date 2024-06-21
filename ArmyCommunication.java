@@ -1,6 +1,6 @@
 public class ArmyCommunication {
 
-    public static String findSubMatrix(String s, int m, int prevSum, int n, int[][]matrix) {
+    public static String getSubMatrix(String s, int m, int prevSum, int n, int[][]matrix) {
         if (m == n) {
             return s;
         }
@@ -18,7 +18,7 @@ public class ArmyCommunication {
                 }
             }
         }
-        return findSubMatrix(s, m + 1, prevSum, n, matrix);
+        return getSubMatrix(s, m + 1, prevSum, n, matrix);
     }
 
     public static String army_communication_matrix(int n, int [][] matrix) {
@@ -26,6 +26,6 @@ public class ArmyCommunication {
         if (n == 2) {
             return "0 0 2";
         }
-        return findSubMatrix(s, 2, 0, n, matrix);
+        return getSubMatrix(s, 2, 0, n, matrix);
     }
 }

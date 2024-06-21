@@ -1,6 +1,7 @@
 import java.util.*;
 
-public class Level1 {
+public class BigInteger {
+
     public static String BigMinus(String s1, String s2) {
         String diff = "";
         char[] firstNumber = s1.toCharArray();

@@ -1,7 +1,8 @@
 import java.util.*;
 
 public class Level1 {
-    public static int squirrel(int N) {
+
+    public static int getFirstDigitFact(int N) {
 
         if (N < 0) {
             throw new IllegalArgumentException("Number is negative: " + N);

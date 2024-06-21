@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Level1 {
 
-    public static int[] func(int[] temp){
+    public static int[] getSortedSequence(int[] temp){
         int x = 0;
         for (int i = 0; i < 2; i++) {
             x = temp[i];
@@ -12,7 +12,7 @@ public class Level1 {
         if (temp[0] <= temp[1] && temp[1] <= temp[2]) {
             return temp;
         } else
-            func(temp);
+            getSortedSequence(temp);
         return temp;
     }
 
@@ -26,7 +26,7 @@ public class Level1 {
                     temp[0] = data[i];
                     temp[1] = data[i + 1];
                     temp[2] = data[i + 2];
-                    func(temp);
+                    getSortedSequence(temp);
                     data[i] = temp[0];
                     data[i + 1] = temp[1];
                     data[i + 2] = temp[2];

@@ -1,5 +1,7 @@
 import java.util.*;
+
 public class Conquest {
+
     public static int ConquestCampaign(int N, int M, int L, int[] battalion) {
         int days = 1;
         boolean isCaptured = false;

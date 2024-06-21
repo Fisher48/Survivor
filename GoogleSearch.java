@@ -1,6 +1,7 @@
 import java.util.*;
 
-public class Level1 {
+public class GoogleSearch {
+
     public static int[] WordSearch(int len, String s, String subs) {
         int countOfCharsInSubstring = 0;
         int substringStartIndex = 0;

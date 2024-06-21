@@ -1,8 +1,8 @@
 import java.util.*;
 
-public class Level1 {
+public class MaximumDiscount {
 
-    public static int MaximumDiscount(int N, int [] price) {
+    public static int getMaxDiscount(int N, int [] price) {
         int maxDiscount = 0;
         int countItems = 0;
         Arrays.sort(price);

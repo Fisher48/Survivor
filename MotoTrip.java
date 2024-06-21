@@ -1,7 +1,8 @@
 import java.util.*;
 
-public class Level1 {
-    public static int odometer(int[] oksana) {
+public class MotoTrip {
+
+    public static int getTotalDistance(int[] oksana) {
         int totalDistance = 0;
         if (oksana.length < 2) {
             throw new IllegalArgumentException("Array size should be >= 2: " + "but current size: " + oksana.length);

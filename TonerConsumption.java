@@ -1,7 +1,8 @@
 import java.util.*;
 
-public class Level1 {
-    public static int PrintingCosts(String Line) {
+public class TonerConsumption {
+
+    public static int getConsumption(String Line) {
         int sumTonerConsumption = 0;
         for (int i = 0; i < Line.length(); i++) {
             if (Line.charAt(i) == ' ') {
