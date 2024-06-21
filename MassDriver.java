@@ -2,7 +2,7 @@ import java.util.*;
 
 public class MassDriver {
 
-    public static int massdriver(int[] activate) {
+    public static int getIndFirstRepElem(int[] activate) {
         int count = -1;
         LinkedHashMap<Integer,Integer> listOfValues = new LinkedHashMap<>();
         LinkedHashMap<Integer,Integer> indexOfValues = new LinkedHashMap<>();

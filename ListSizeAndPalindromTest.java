@@ -12,19 +12,19 @@ public class ListSizeAndPalindromTest {
         five.add("проверки");
         five.add("длины");
         five.add("списка");
-        assertEquals(35,ListSizeAndPalindrom.listLength(five));
+        assertEquals(35,ListSizeAndPalindrom.getListLength(five));
     }
 
     @Test
     public void PalindromNumsTest() {
-        assertEquals(true,ListSizeAndPalindrom.checkPalindrom("оно"));
-        assertEquals(false,ListSizeAndPalindrom.checkPalindrom("123211"));
-        assertEquals(false,ListSizeAndPalindrom.checkPalindrom("Привет"));
-        assertEquals(true,ListSizeAndPalindrom.checkPalindrom("radar"));
-        assertEquals(false,ListSizeAndPalindrom.checkPalindrom("16787761"));
-        assertEquals(true,ListSizeAndPalindrom.checkPalindrom("12321"));
-        assertEquals(true,ListSizeAndPalindrom.checkPalindrom("38283"));
-        assertEquals(true,ListSizeAndPalindrom.checkPalindrom("11111"));
+        assertEquals(true,ListSizeAndPalindrom.checkPalindrome("оно"));
+        assertEquals(false,ListSizeAndPalindrom.checkPalindrome("123211"));
+        assertEquals(false,ListSizeAndPalindrom.checkPalindrome("Привет"));
+        assertEquals(true,ListSizeAndPalindrom.checkPalindrome("radar"));
+        assertEquals(false,ListSizeAndPalindrom.checkPalindrome("16787761"));
+        assertEquals(true,ListSizeAndPalindrom.checkPalindrome("12321"));
+        assertEquals(true,ListSizeAndPalindrom.checkPalindrome("38283"));
+        assertEquals(true,ListSizeAndPalindrom.checkPalindrome("11111"));
     }
 
 }

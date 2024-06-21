@@ -3,7 +3,7 @@ import java.util.*;
 public class FindSecondMax {
 
 
-    public static int SecMax(List<Integer> nums, int max1, int max2, int index) {
+    public static int getSecondMax(List<Integer> nums, int max1, int max2, int index) {
         if (index > nums.size() - 1) {
             return max2;
         }
@@ -14,7 +14,7 @@ public class FindSecondMax {
         else if (nums.get(index) > max2 && nums.get(index) <= max1) {
             max2 = nums.get(index);
         }
-        return SecMax(nums, max1, max2, index + 1);
+        return getSecondMax(nums, max1, max2, index + 1);
     }
 
     public static int findSecMax(List<Integer> numbs) {
@@ -29,7 +29,7 @@ public class FindSecondMax {
             max2 = numbs.get(0);
             max1 = numbs.get(1);
         }
-        return SecMax(numbs, max1, max2, 2);
+        return getSecondMax(numbs, max1, max2, 2);
     }
 
 }

@@ -10,7 +10,7 @@ public class EvenNumsAndEvenIndexTest {
         list.add(1); list.add(2); list.add(5); list.add(4); list.add(7); list.add(10);
         List<Integer> evenNums = new ArrayList<>();
         evenNums.add(2); evenNums.add(4); evenNums.add(10);
-        assertEquals(evenNums,EvenNumsAndEvenIndex.evenNums(list));
+        assertEquals(evenNums,EvenNumsAndEvenIndex.printEvenNumbers(list));
     }
 
     @Test
@@ -19,7 +19,7 @@ public class EvenNumsAndEvenIndexTest {
         list.add("проверка"); list.add("вывода"); list.add("на"); list.add("экран"); list.add("четных"); list.add("индексов");
         List<String> evenNums = new ArrayList<>();
         evenNums.add("проверка"); evenNums.add("на");evenNums.add("четных");
-        assertEquals(evenNums,EvenNumsAndEvenIndex.evenIndex(list,0));
+        assertEquals(evenNums,EvenNumsAndEvenIndex.printEvenIndElements(list,0));
     }
 
 }

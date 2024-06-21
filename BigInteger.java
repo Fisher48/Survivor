@@ -2,7 +2,7 @@ import java.util.*;
 
 public class BigInteger {
 
-    public static String BigMinus(String s1, String s2) {
+    public static String getDiffOfNumbers(String s1, String s2) {
         String diff = "";
         char[] firstNumber = s1.toCharArray();
         char[] secondNumber = s2.toCharArray();

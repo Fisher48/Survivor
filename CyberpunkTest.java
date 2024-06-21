@@ -9,13 +9,13 @@ public class CyberpunkTest {
 
     @Test
     public void SampleTest() {
-        assertEquals(true,Cyberpunk.ECC_help(new int[] {19,3,562,12,114,2},new int[] {562,12,2,3,19,114}));
-        assertEquals(false,Cyberpunk.ECC_help(new int[] {1,3,56,12,1,2,3},new int[] {56,12,1,2,2,3,1}));
-        assertEquals(false,Cyberpunk.ECC_help(new int[] {1,3,2,3},new int[] {1,2,2,3}));
-        assertEquals(false,Cyberpunk.ECC_help(new int[] {1,2,3},new int[] {1,2,3,4}));
-        assertEquals(true,Cyberpunk.ECC_help(new int[] {1,2,3},new int[] {1,2,3}));
-        assertEquals(true,Cyberpunk.ECC_help(new int[] {1,3,2},new int[] {1,2,3}));
-        assertEquals(true,Cyberpunk.ECC_help(new int[] {1,1},new int[] {1,1}));
+        assertEquals(true,Cyberpunk.isEquivalentArrays(new int[] {19,3,562,12,114,2},new int[] {562,12,2,3,19,114}));
+        assertEquals(false,Cyberpunk.isEquivalentArrays(new int[] {1,3,56,12,1,2,3},new int[] {56,12,1,2,2,3,1}));
+        assertEquals(false,Cyberpunk.isEquivalentArrays(new int[] {1,3,2,3},new int[] {1,2,2,3}));
+        assertEquals(false,Cyberpunk.isEquivalentArrays(new int[] {1,2,3},new int[] {1,2,3,4}));
+        assertEquals(true,Cyberpunk.isEquivalentArrays(new int[] {1,2,3},new int[] {1,2,3}));
+        assertEquals(true,Cyberpunk.isEquivalentArrays(new int[] {1,3,2},new int[] {1,2,3}));
+        assertEquals(true,Cyberpunk.isEquivalentArrays(new int[] {1,1},new int[] {1,1}));
     }
 
     @RepeatedTest(100)
@@ -27,7 +27,7 @@ public class CyberpunkTest {
             arr1[i] = rand.nextInt(100) + 1;
             arr2[i] = rand.nextInt(100) + 1;
         }
-        assertEquals(Arrays.equals(arr1,arr2),Cyberpunk.ECC_help(arr2,arr1));
+        assertEquals(Arrays.equals(arr1,arr2),Cyberpunk.isEquivalentArrays(arr2,arr1));
     }
 
 }

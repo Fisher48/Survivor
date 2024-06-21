@@ -3,7 +3,7 @@ import java.util.*;
 public class EvenNumsAndEvenIndex {
 
     // Печать только четных значений из списка
-    public static List<Integer> evenNums(List<Integer> list) {
+    public static List<Integer> printEvenNumbers(List<Integer> list) {
         if (list.isEmpty()) {
             return null;
         }
@@ -11,16 +11,16 @@ public class EvenNumsAndEvenIndex {
             System.out.println(list.getFirst());
         }
         list.remove(list.getFirst());
-        return evenNums(list);
+        return printEvenNumbers(list);
     }
 
     // Печать элементов списка с чётными индексами;
-    public static List<String> evenIndex(List<String> list, int index) {
+    public static List<String> printEvenIndElements(List<String> list, int index) {
         if (index > list.size()-1) {
             return null;
         }
         System.out.println(list.get(index));
-        return evenIndex(list, index + 2);
+        return printEvenIndElements(list, index + 2);
     }
 }
 

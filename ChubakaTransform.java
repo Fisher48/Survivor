@@ -2,7 +2,7 @@ import java.util.*;
 
 public class ChubakaTransform {
 
-    public static List<Integer> Transform(int[] A){
+    public static List<Integer> setTransformation(int[] A){
         ArrayList<Integer> B = new ArrayList<>();
         int k = 0;
         int max = -1;
@@ -22,12 +22,12 @@ public class ChubakaTransform {
     }
 
     public static boolean TransformTransform(int A[], int N){
-        List<Integer> B1 = Transform(A);
+        List<Integer> B1 = setTransformation(A);
         int[] temp = new int[B1.size()];
         for (int i = 0; i < B1.size(); i++) {
             temp[i] = B1.get(i);
         }
-        List<Integer> B2 = Transform(temp);
+        List<Integer> B2 = setTransformation(temp);
         boolean isEvenSum = false;
         int sumAfterDoubleTransf = 0;
         for (int i = 0; i < B2.size(); i++){

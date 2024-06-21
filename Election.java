@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Election {
 
-    public static String MassVote(int N, int [] Votes) {
+    public static String getWinnerOfElection(int N, int [] Votes) {
         String winner = "winner ";
         int possibleCandidate = 0;
         boolean isOneWinner = true;

@@ -1,6 +1,8 @@
 import java.util.*;
+
 public class Level1 {
-    public static int [] MadMax(int N, int [] Tele) {
+
+    public static int [] getImpulse(int N, int [] Tele) {
         int[] impulse = new int[N];
         int maxValue = 0;
         Arrays.sort(Tele);

@@ -20,7 +20,7 @@ public class BracketsGeneration {
         return list;
     }
 
-    public static List<String> brackets(int N){
+    public static List<String> getListOfBrackets(int N){
         List<String> list = new ArrayList<>();
         char[] s = new char[N * 2];
         return genBrackets(list, N, N, s, 0);
