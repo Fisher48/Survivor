@@ -28,15 +28,11 @@ public class ChubakaTransform {
             temp[i] = B1.get(i);
         }
         List<Integer> B2 = setTransformation(temp);
-        boolean isEvenSum = false;
         int sumAfterDoubleTransf = 0;
         for (int i = 0; i < B2.size(); i++){
             sumAfterDoubleTransf += B2.get(i);
         }
-        if (sumAfterDoubleTransf % 2 == 0) {
-            isEvenSum = true;
-        }
-        return isEvenSum;
+        return sumAfterDoubleTransf % 2 == 0;
     }
 }
 

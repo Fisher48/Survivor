@@ -2,6 +2,8 @@ import java.util.*;
 
 public class Election {
 
+    public static final double DECIMAL_PLACES = 1000.0;
+
     public static String getWinnerOfElection(int N, int [] Votes) {
         String winner = "winner ";
         int possibleCandidate = 0;
@@ -27,8 +29,12 @@ public class Election {
                 isOneWinner = false;
             }
         }
+        if (sumOfVotesOnElection == 0) {
+            return "no winner";
+        }
 
-        percent = (int) (maxVotes * 1.0 / sumOfVotesOnElection * 100000.0) / 1000.0;
+        percent = (double) (maxVotes * 100) / sumOfVotesOnElection;
+        percent = Math.ceil(percent * DECIMAL_PLACES) / DECIMAL_PLACES;
 
         if (!isOneWinner) {
             return "no winner";

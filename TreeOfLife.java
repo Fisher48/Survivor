@@ -4,6 +4,8 @@ public class Level1 {
 
     public static final int AGE_OF_DEATH = 3;
 
+    public static final int NO_BRANCH = 0;
+
     public static int[][] destructionOfTree(int[][] tree) {
 
         for (int i = 0; i < tree.length; i++) {
@@ -13,95 +15,95 @@ public class Level1 {
                     if (i == 0) {
                         if (j == 0) {
                             if (tree[i + 1][j] < AGE_OF_DEATH) {
-                                tree[i + 1][j] = 0;
+                                tree[i + 1][j] = NO_BRANCH;
                             }
                             if (tree[i][j + 1] < AGE_OF_DEATH) {
-                                tree[i][j + 1] = 0;
+                                tree[i][j + 1] = NO_BRANCH;
                             }
                         }
                         if (j == tree[0].length - 1) {
                             if (tree[i][j - 1] < AGE_OF_DEATH) {
-                                tree[i][j - 1] = 0;
+                                tree[i][j - 1] = NO_BRANCH;
                             }
                             if (tree[i + 1][j] < AGE_OF_DEATH) {
-                                tree[i + 1][j] = 0;
+                                tree[i + 1][j] = NO_BRANCH;
                             }
                         }
                         if (j > 0 && j < tree[0].length - 1) {
                             if (tree[i][j - 1] < AGE_OF_DEATH) {
-                                tree[i][j - 1] = 0;
+                                tree[i][j - 1] = NO_BRANCH;
                             }
                             if (tree[i + 1][j] < AGE_OF_DEATH) {
-                                tree[i + 1][j] = 0;
+                                tree[i + 1][j] = NO_BRANCH;
                             }
                             if (tree[i][j + 1] < AGE_OF_DEATH) {
-                                tree[i][j + 1] = 0;
+                                tree[i][j + 1] = NO_BRANCH;
                             }
                         }
                     }
                     if (i == tree.length - 1) {
                         if (j == 0) {
                             if (tree[i - 1][j] < AGE_OF_DEATH) {
-                                tree[i - 1][j] = 0;
+                                tree[i - 1][j] = NO_BRANCH;
                             }
                             if (tree[i][j + 1] < AGE_OF_DEATH) {
-                                tree[i][j + 1] = 0;
+                                tree[i][j + 1] = NO_BRANCH;
                             }
                         }
                         if (j == tree[0].length - 1) {
                             if (tree[i][j - 1] < AGE_OF_DEATH) {
-                                tree[i][j - 1] = 0;
+                                tree[i][j - 1] = NO_BRANCH;
                             }
                             if (tree[i - 1][j] < AGE_OF_DEATH) {
-                                tree[i - 1][j] = 0;
+                                tree[i - 1][j] = NO_BRANCH;
                             }
                         }
                         if (j > 0 && j < tree[0].length - 1) {
                             if (tree[i][j - 1] < AGE_OF_DEATH) {
-                                tree[i][j - 1] = 0;
+                                tree[i][j - 1] = NO_BRANCH;
                             }
                             if (tree[i - 1][j] < AGE_OF_DEATH) {
-                                tree[i - 1][j] = 0;
+                                tree[i - 1][j] = NO_BRANCH;
                             }
                             if (tree[i][j + 1] < AGE_OF_DEATH) {
-                                tree[i][j + 1] = 0;
+                                tree[i][j + 1] = NO_BRANCH;
                             }
                         }
                     }
                     if (i < tree.length - 1 && i > 0 && j == 0) {
                         if (tree[i - 1][j] < AGE_OF_DEATH) {
-                            tree[i - 1][j] = 0;
+                            tree[i - 1][j] = NO_BRANCH;
                         }
                         if (tree[i + 1][j] < AGE_OF_DEATH) {
-                            tree[i + 1][j] = 0;
+                            tree[i + 1][j] = NO_BRANCH;
                         }
                         if (tree[i][j + 1] < AGE_OF_DEATH) {
-                            tree[i][j + 1] = 0;
+                            tree[i][j + 1] = NO_BRANCH;
                         }
                     }
                     if (i < tree.length - 1 && i > 0 && j == tree[0].length - 1) {
                         if (tree[i - 1][j] < AGE_OF_DEATH) {
-                            tree[i - 1][j] = 0;
+                            tree[i - 1][j] = NO_BRANCH;
                         }
                         if (tree[i + 1][j] < AGE_OF_DEATH) {
-                            tree[i + 1][j] = 0;
+                            tree[i + 1][j] = NO_BRANCH;
                         }
                         if (tree[i][j - 1] < AGE_OF_DEATH) {
-                            tree[i][j - 1] = 0;
+                            tree[i][j - 1] = NO_BRANCH;
                         }
                     }
                     if (i > 0 && i < tree.length - 1 && j > 0 && j < tree[0].length - 1) {
                         if (tree[i - 1][j] < AGE_OF_DEATH) {
-                            tree[i - 1][j] = 0;
+                            tree[i - 1][j] = NO_BRANCH;
                         }
                         if (tree[i + 1][j] < AGE_OF_DEATH) {
-                            tree[i + 1][j] = 0;
+                            tree[i + 1][j] = NO_BRANCH;
                         }
                         if (tree[i][j - 1] < AGE_OF_DEATH) {
-                            tree[i][j - 1] = 0;
+                            tree[i][j - 1] = NO_BRANCH;
                         }
                         if (tree[i][j + 1] < AGE_OF_DEATH) {
-                            tree[i][j + 1] = 0;
+                            tree[i][j + 1] = NO_BRANCH;
                         }
                     }
                 }
