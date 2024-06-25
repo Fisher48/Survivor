@@ -3,7 +3,7 @@ import java.util.*;
 public class GoogleSearch {
 
     public static int[] WordSearch(int len, String s, String subs) {
-        int countOfCharsInSubstring = 0;
+        int countOfCharsInSubstr = 0;
         int substringStartIndex = 0;
         int substringEndIndex = 0;
         ArrayList<String> list = new ArrayList<>();
@@ -11,25 +11,25 @@ public class GoogleSearch {
             if (s.charAt(i) == ' ') {
                 substringEndIndex = i + 1;
             }
-            if (substringStartIndex >= substringEndIndex && countOfCharsInSubstring >= len) {
+            if (substringStartIndex >= substringEndIndex && countOfCharsInSubstr >= len) {
                 list.add(s.substring(substringStartIndex, i));
                 substringStartIndex = i;
-                countOfCharsInSubstring = 0;
+                countOfCharsInSubstr = 0;
             }
-            if (countOfCharsInSubstring >= len && s.charAt(i) != ' ') {
+            if (countOfCharsInSubstr >= len && s.charAt(i) != ' ') {
                 list.add(s.substring(substringStartIndex, substringEndIndex));
                 substringStartIndex = substringEndIndex;
-                countOfCharsInSubstring = i - substringEndIndex;
+                countOfCharsInSubstr = i - substringEndIndex;
             }
-            if (countOfCharsInSubstring >= len) {
+            if (countOfCharsInSubstr >= len) {
                 list.add(s.substring(substringStartIndex, substringEndIndex));
                 substringStartIndex = substringEndIndex;
-                countOfCharsInSubstring = i - substringEndIndex;
+                countOfCharsInSubstr = i - substringEndIndex;
             }
             if (i == s.length() - 1) {
                 list.add(s.substring(substringStartIndex, i + 1));
             }
-            countOfCharsInSubstring++;
+            countOfCharsInSubstr++;
         }
 
         int[] FindWord = new int[list.size()];
