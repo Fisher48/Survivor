@@ -2,103 +2,105 @@ import java.util.*;
 
 public class Level1 {
 
+    public static final int AGE_OF_DEATH = 3;
+
     public static int[][] destructionOfTree(int[][] tree) {
 
         for (int i = 0; i < tree.length; i++) {
             for (int j = 0; j < tree[0].length; j++) {
-                if (tree[i][j] >= 3) {
+                if (tree[i][j] >= AGE_OF_DEATH) {
                     tree[i][j] = 0;
                     if (i == 0) {
                         if (j == 0) {
-                            if (tree[i + 1][j] < 3) {
+                            if (tree[i + 1][j] < AGE_OF_DEATH) {
                                 tree[i + 1][j] = 0;
                             }
-                            if (tree[i][j + 1] < 3) {
+                            if (tree[i][j + 1] < AGE_OF_DEATH) {
                                 tree[i][j + 1] = 0;
                             }
                         }
                         if (j == tree[0].length - 1) {
-                            if (tree[i][j - 1] < 3) {
+                            if (tree[i][j - 1] < AGE_OF_DEATH) {
                                 tree[i][j - 1] = 0;
                             }
-                            if (tree[i + 1][j] < 3) {
+                            if (tree[i + 1][j] < AGE_OF_DEATH) {
                                 tree[i + 1][j] = 0;
                             }
                         }
                         if (j > 0 && j < tree[0].length - 1) {
-                            if (tree[i][j - 1] < 3) {
+                            if (tree[i][j - 1] < AGE_OF_DEATH) {
                                 tree[i][j - 1] = 0;
                             }
-                            if (tree[i + 1][j] < 3) {
+                            if (tree[i + 1][j] < AGE_OF_DEATH) {
                                 tree[i + 1][j] = 0;
                             }
-                            if (tree[i][j + 1] < 3) {
+                            if (tree[i][j + 1] < AGE_OF_DEATH) {
                                 tree[i][j + 1] = 0;
                             }
                         }
                     }
                     if (i == tree.length - 1) {
                         if (j == 0) {
-                            if (tree[i - 1][j] < 3) {
+                            if (tree[i - 1][j] < AGE_OF_DEATH) {
                                 tree[i - 1][j] = 0;
                             }
-                            if (tree[i][j + 1] < 3) {
+                            if (tree[i][j + 1] < AGE_OF_DEATH) {
                                 tree[i][j + 1] = 0;
                             }
                         }
                         if (j == tree[0].length - 1) {
-                            if (tree[i][j - 1] < 3) {
+                            if (tree[i][j - 1] < AGE_OF_DEATH) {
                                 tree[i][j - 1] = 0;
                             }
-                            if (tree[i - 1][j] < 3) {
+                            if (tree[i - 1][j] < AGE_OF_DEATH) {
                                 tree[i - 1][j] = 0;
                             }
                         }
                         if (j > 0 && j < tree[0].length - 1) {
-                            if (tree[i][j - 1] < 3) {
+                            if (tree[i][j - 1] < AGE_OF_DEATH) {
                                 tree[i][j - 1] = 0;
                             }
-                            if (tree[i - 1][j] < 3) {
+                            if (tree[i - 1][j] < AGE_OF_DEATH) {
                                 tree[i - 1][j] = 0;
                             }
-                            if (tree[i][j + 1] < 3) {
+                            if (tree[i][j + 1] < AGE_OF_DEATH) {
                                 tree[i][j + 1] = 0;
                             }
                         }
                     }
                     if (i < tree.length - 1 && i > 0 && j == 0) {
-                        if (tree[i - 1][j] < 3) {
+                        if (tree[i - 1][j] < AGE_OF_DEATH) {
                             tree[i - 1][j] = 0;
                         }
-                        if (tree[i + 1][j] < 3) {
+                        if (tree[i + 1][j] < AGE_OF_DEATH) {
                             tree[i + 1][j] = 0;
                         }
-                        if (tree[i][j + 1] < 3) {
+                        if (tree[i][j + 1] < AGE_OF_DEATH) {
                             tree[i][j + 1] = 0;
                         }
                     }
                     if (i < tree.length - 1 && i > 0 && j == tree[0].length - 1) {
-                        if (tree[i - 1][j] < 3) {
+                        if (tree[i - 1][j] < AGE_OF_DEATH) {
                             tree[i - 1][j] = 0;
                         }
-                        if (tree[i + 1][j] < 3) {
+                        if (tree[i + 1][j] < AGE_OF_DEATH) {
                             tree[i + 1][j] = 0;
                         }
-                        if (tree[i][j - 1] < 3) {
+                        if (tree[i][j - 1] < AGE_OF_DEATH) {
                             tree[i][j - 1] = 0;
                         }
                     }
                     if (i > 0 && i < tree.length - 1 && j > 0 && j < tree[0].length - 1) {
-                        if (tree[i - 1][j] < 3) {
+                        if (tree[i - 1][j] < AGE_OF_DEATH) {
                             tree[i - 1][j] = 0;
                         }
-                        if (tree[i + 1][j] < 3) {
+                        if (tree[i + 1][j] < AGE_OF_DEATH) {
                             tree[i + 1][j] = 0;
                         }
-                        if (tree[i][j - 1] < 3) {
+                        if (tree[i][j - 1] < AGE_OF_DEATH) {
                             tree[i][j - 1] = 0;
                         }
-                        if (tree[i][j + 1] < 3) {
+                        if (tree[i][j + 1] < AGE_OF_DEATH) {
                             tree[i][j + 1] = 0;
                         }
                     }
@@ -133,7 +135,7 @@ public class Level1 {
 
             for (int k = 0; k < treeDigitArray.length; k++) {
                 for (int z = 0; z < treeDigitArray[0].length; z++) {
-                    if (treeDigitArray[k][z] >= 3 && years % 2 != 1) {
+                    if (treeDigitArray[k][z] >= AGE_OF_DEATH && years % 2 != 1) {
                         destructionOfTree(treeDigitArray);
                         break;
                     }

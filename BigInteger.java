@@ -2,6 +2,10 @@ import java.util.*;
 
 public class BigInteger {
 
+    public static final int ZERO = 48;
+
+    public static final int SUBTRACTION_DEPTH = 10;
+
     public static String getDiffOfNumbers(String s1, String s2) {
         String diff = "";
         char[] firstNumber = s1.toCharArray();
@@ -55,7 +59,7 @@ public class BigInteger {
                         continue;
                     }
                     if (firstNumber[i] - secondNumbScaled[i] < 0) {
-                        diff += firstNumber[i] + 10 - secondNumbScaled[i];
+                        diff += firstNumber[i] + SUBTRACTION_DEPTH - secondNumbScaled[i];
                         isDiffPositive = false;
                     }
                 }
@@ -92,7 +96,7 @@ public class BigInteger {
                         continue;
                     }
                     if (secondNumber[i] - firstNumbScaled[i] < 0) {
-                        diff += secondNumber[i] + 10 - firstNumbScaled[i];
+                        diff += secondNumber[i] + SUBTRACTION_DEPTH - firstNumbScaled[i];
                         isDiffPositive = false;
                     }
                 }
@@ -127,7 +131,7 @@ public class BigInteger {
                     continue;
                 }
                 if (firstNumber[i] <= secondNumbScaled[i]) {
-                    diff += firstNumber[i] + 10 - secondNumbScaled[i];
+                    diff += firstNumber[i] + SUBTRACTION_DEPTH - secondNumbScaled[i];
                     isDiffPositive = false;
                 }
             }
@@ -161,7 +165,7 @@ public class BigInteger {
                     continue;
                 }
                 if (secondNumber[i] <= firstNumbScaled[i]) {
-                    diff += secondNumber[i] + 10 - firstNumbScaled[i];
+                    diff += secondNumber[i] + SUBTRACTION_DEPTH - firstNumbScaled[i];
                     isDiffPositive = false;
                 }
             }
@@ -171,7 +175,7 @@ public class BigInteger {
             properDiff[diff.length() - i - 1] = diff.charAt(i);
         }
         for (int i = 0; i <= properDiff.length; i++) {
-            if (properDiff[i] == 48) {
+            if (properDiff[i] == ZERO) {
                 properDiff[i] = ' ';
             } else  {
                 break;

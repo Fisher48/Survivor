@@ -6,6 +6,11 @@ public class BastShoe2 {
     public static List<String> numbOfOperations = new ArrayList<>();
     public static int count = 0;
     public static StringBuffer stringBuffer = new StringBuffer();
+    public static final char ADDING = '1';
+    public static final char DELETE = '2';
+    public static final char GET_SYMBOL = '3';
+    public static final String UNDO = "4";
+    public static final String REDO = "5";
 
     public static String add(String command) {
         stringBuffer.append(command.substring(2));
@@ -36,19 +41,19 @@ public class BastShoe2 {
 
     public static String BastShoe(String command) {
 
-        if (command.charAt(0) == '1') {
+        if (command.charAt(0) == ADDING) {
             return BastShoe2.add(command);
         }
 
-        if (command.charAt(0) == '2') {
+        if (command.charAt(0) == DELETE) {
             return BastShoe2.del(command);
         }
 
-        if (command.charAt(0) == '3') {
+        if (command.charAt(0) == GET_SYMBOL) {
             return BastShoe2.insert(command);
         }
 
-        if (command.equals("4")) {
+        if (command.equals(UNDO)) {
             if (numbOfOperations.get(count).equals("1") || numbOfOperations.get(count).equals("2")) {
                 count--;
                 allChanges.add(allChanges.get(count));
@@ -60,11 +65,11 @@ public class BastShoe2 {
                 return allChanges.get(count);
             }
         }
-        if (command.equals("5")) {
-            if (count != allChanges.size()-1 && !numbOfOperations.get(count+1).contains("4")) {
+        if (command.equals(REDO)) {
+            if (count != allChanges.size()-1 && !numbOfOperations.get(count+1).contains(UNDO)) {
                 count++;
             }
-            if (numbOfOperations.get(count).equals("4")){
+            if (numbOfOperations.get(count).equals(UNDO)){
                 allChanges.add(allChanges.get(count));
                 numbOfOperations.add(command);
                 stringBuffer.delete(0,stringBuffer.length());

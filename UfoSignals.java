@@ -1,7 +1,11 @@
 import java.util.*;
 
-public class Level1 {
-   public static int [] UFO(int N, int [] data, boolean numberSystem) {
+public class UfoSignals {
+
+    public static final int OCTAL = 8;
+    public static final int HEXADECIMAL = 16;
+
+    public static int [] UFO(int N, int [] data, boolean numberSystem) {
 
        int[] decimalCode = new int[N];
        int temp = 0;
@@ -11,9 +15,9 @@ public class Level1 {
        int currentNumb = 0;
 
        if (!numberSystem) {
-           ratio = 16;
+           ratio = HEXADECIMAL;
        } else if (numberSystem) {
-           ratio = 8;
+           ratio = OCTAL;
        }
        int count = 0;
 

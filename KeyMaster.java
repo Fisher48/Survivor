@@ -1,17 +1,20 @@
 import java.util.*;
 
-public class Level1 {
+public class KeyMaster {
+
+    public static final String OPEN_DOOR = "1";
+    public static final String CLOSED_DOOR = "0";
 
     public static String Keymaker(int k) {
         StringBuffer doors = new StringBuffer();
         String[] matrixK = new String[k];
-        Arrays.fill(matrixK, "0");
+        Arrays.fill(matrixK, CLOSED_DOOR);
         for (int j = 1; j <= k; j++) {
             for (int i = j - 1; i < k; i += j) {
-                if (matrixK[i].equals("0")) {
-                    matrixK[i] = "1";
+                if (matrixK[i].equals(CLOSED_DOOR)) {
+                    matrixK[i] = OPEN_DOOR;
                 } else {
-                    matrixK[i] = "0";
+                    matrixK[i] = CLOSED_DOOR;
                 }
             }
         }
