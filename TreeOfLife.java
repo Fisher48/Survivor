@@ -114,7 +114,6 @@ public class Level1 {
 
     public static String[] TreeOfLife(int H, int W, int N, String [] tree){
         int[][] treeDigitArray = new int[H][W];
-        int years = 0;
         char[] temp;
         for (int i = 0; i < H; i++) {
             temp = tree[i].toCharArray();
@@ -127,6 +126,7 @@ public class Level1 {
             }
         }
 
+        int years = 0;
         while (years < N) {
             years++;
             for (int k = 0; k < treeDigitArray.length; k++) {

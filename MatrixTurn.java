@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Level1 {
+public class MatrixTurn {
 
     public static void MatrixTurn(String Matrix[], int M, int N, int T) {
         int[][] digitsMatrix = new int[M][N];
@@ -11,14 +11,12 @@ public class Level1 {
                 digitsMatrix[i][j] = Integer.parseInt(String.valueOf(stringToInteger[j]));
             }
         }
-        int row = 0;
-        int colum = 0;
+
         int prev;
         int curr;
-
         for (int step = 0; step < T; step++) {
-            row = 0;
-            colum = 0;
+            int row = 0;
+            int colum = 0;
             M = digitsMatrix.length;
             N = digitsMatrix[0].length;
 

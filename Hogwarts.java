@@ -1,18 +1,16 @@
 import java.util.*;
 
-public class Level1 {
+public class Hogwarts {
 
     public static String BiggerGreater(String input) {
         StringBuffer output = new StringBuffer();
         output.append(input);
         List<String> listOfRearrangeWord = new ArrayList<>();
         char[] x = input.toCharArray();
-        char temp;
-        String s = "";
         for (int i = 0; i < x.length; i++) {
             for (int j = 0; j < x.length; j++) {
                 StringBuffer sb = new StringBuffer();
-                temp = x[i];
+                char temp = x[i];
                 x[i] = x[j];
                 x[j] = temp;
                 sb.append(x);
@@ -22,7 +20,7 @@ public class Level1 {
             }
         }
         if (listOfRearrangeWord.isEmpty()) {
-            return s;
+            return "";
         }
         Collections.sort(listOfRearrangeWord);
         return listOfRearrangeWord.getFirst();

@@ -5,12 +5,9 @@ public class Election {
     public static final double DECIMAL_PLACES = 1000.0;
 
     public static String getWinnerOfElection(int N, int [] Votes) {
-        String winner = "winner ";
         int possibleCandidate = 0;
-        boolean isOneWinner = true;
         int sumOfVotesOnElection = 0;
         int maxVotes = 0;
-        double percent;
 
         for (int i = 0; i < N; i++) {
             sumOfVotesOnElection += Votes[i];
@@ -20,6 +17,7 @@ public class Election {
             }
         }
 
+        boolean isOneWinner = true;
         int countWinners = 0;
         for (Integer j: Votes) {
             if (j == maxVotes) {
@@ -29,23 +27,24 @@ public class Election {
                 isOneWinner = false;
             }
         }
+        String noWinner = "no winner";
         if (sumOfVotesOnElection == 0) {
-            return "no winner";
+            return noWinner;
         }
 
-        percent = (double) (maxVotes * 100) / sumOfVotesOnElection;
+        double percent = (double) (maxVotes * 100) / sumOfVotesOnElection;
         percent = Math.ceil(percent * DECIMAL_PLACES) / DECIMAL_PLACES;
 
         if (!isOneWinner) {
-            return "no winner";
+            return noWinner;
         }
         if (percent > 50.0) {
-            return  "majority " + winner + possibleCandidate;
+            return  "majority winner " + possibleCandidate;
         }
         if (percent <= 50.0) {
-            return  "minority " + winner + possibleCandidate;
+            return  "minority winner " + possibleCandidate;
         }
-        return winner;
+        return noWinner;
     }
 }
 

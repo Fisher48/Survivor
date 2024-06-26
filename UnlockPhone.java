@@ -38,14 +38,7 @@ public class UnlockPhone {
                 }
             }
         }
-        String resultLen = String.format("%.5f",lenDuringDrawnCode);
-        if (lenDuringDrawnCode == 0) {
-            resultLen = "";
-            return resultLen;
-        }
-        resultLen = resultLen.replaceAll(",","");
-        resultLen = resultLen.replaceAll("0","");
-        return resultLen;
+        return String.format("%.5f",lenDuringDrawnCode).replaceAll("[,0.]","");
     }
 }
 

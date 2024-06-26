@@ -6,12 +6,8 @@ public class WhiteWalkers {
     public static final char WALKER = '=';
 
     public static boolean white_walkers(String village){
-        boolean found = false;
-        int walkers = 0;
         int curr = 0;
         int prev = 0;
-        int sum = 0;
-        String s = "";
         List<String> list = new ArrayList<>();
         for (int i = 0; i < village.length(); i++) {
             if (isDigit(village.charAt(i))) {
@@ -21,8 +17,11 @@ public class WhiteWalkers {
             }
         }
 
+        int sum = 0;
+        int walkers = 0;
+        boolean found = false;
         for (int i = 0; i < list.size(); i++) {
-            s = list.get(i);
+            String s = list.get(i);
             for (int j = 0; j < s.length(); j++) {
                 if (s.charAt(j) == WALKER) {
                     walkers++;
@@ -36,11 +35,7 @@ public class WhiteWalkers {
                 walkers = 0;
                 continue;
             }
-            if (walkers >= 3) {
-                found = true;
-            } else {
-                found = false;
-            }
+            found = walkers >= 3;
             sum = 0;
             walkers = 0;
         }

@@ -1,24 +1,24 @@
 import java.util.*;
 
-public class Level1 {
+public class AiForOksana {
+
    public static int SumOfThe(int N, int [] data){
-        int x = 0;
-        int sumOfAllOtherNumbers = 0;
-        int temp = 0;
+        int checkNumber = 0;
+        int temp;
         for (int i = 0; i <= N; i++) {
-            sumOfAllOtherNumbers = data[i];
-            temp = sumOfAllOtherNumbers;
+            checkNumber = data[i];
+            temp = checkNumber;
             data[i] = 0;
+            int sumOfAllOtherNumbers = 0;
             for (int j = 0; j < N; j++) {
-                x += data[j];
+                sumOfAllOtherNumbers += data[j];
             }
-            if (x == sumOfAllOtherNumbers) {
-                return sumOfAllOtherNumbers;
+            if (sumOfAllOtherNumbers == checkNumber) {
+                return checkNumber;
             }
             data[i] = temp;
-            x = 0;
         }
-        return sumOfAllOtherNumbers;
+        return checkNumber;
     }
 }
 

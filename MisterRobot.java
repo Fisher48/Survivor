@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Level1 {
+public class MisterRobot {
 
     public static int[] getSortedSequence(int[] temp){
         int x = 0;
@@ -11,15 +11,14 @@ public class Level1 {
         }
         if (temp[0] <= temp[1] && temp[1] <= temp[2]) {
             return temp;
-        } else
+        } else {
             getSortedSequence(temp);
+        }
         return temp;
     }
 
     public static boolean MisterRobot(int N, int[] data){
         int[] temp = new int[3];
-        int[] sortedArray = Arrays.copyOf(data, data.length);
-
         for (int i = 0; i < N; i++) {
             if (i < N - 2) {
                 if (data[i] < data[i + 1] && data[i + 1] > data[i + 2] && data[i + 2] < data[i]) {
@@ -36,6 +35,7 @@ public class Level1 {
                 }
             }
         }
+        int[] sortedArray = Arrays.copyOf(data, data.length);
         Arrays.sort(sortedArray);
         return Arrays.equals(sortedArray,data);
     }

@@ -8,18 +8,11 @@ public class UfoSignals {
     public static int [] UFO(int N, int [] data, boolean numberSystem) {
 
        int[] decimalCode = new int[N];
-       int temp = 0;
-       int numb = 0;
-       int extent = 0;
-       int ratio = 0;
-       int currentNumb = 0;
-
-       ratio = !numberSystem ? HEXADECIMAL : OCTAL;
-
+       int ratio = !numberSystem ? HEXADECIMAL : OCTAL;
        int count = 0;
        for (int j = 0; j < N; j++) {
-           currentNumb = data[j];
-           temp = currentNumb;
+           int currentNumb = data[j];
+           int temp = currentNumb;
            while (currentNumb > 0) {
                count++;
                currentNumb /= 10;
@@ -32,13 +25,13 @@ public class UfoSignals {
                digits[k] = temp;
                temp = currentNumb;
            }
+           int numb = 0;
            for (int i = 0; i < count; i++) {
-               extent = (int) Math.pow(ratio, i);
+               int extent = (int) Math.pow(ratio, i);
                numb += extent * digits[i];
            }
            decimalCode[j] = numb;
            count = 0;
-           numb = 0;
        }
        return decimalCode;
    }

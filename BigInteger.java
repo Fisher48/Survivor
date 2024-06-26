@@ -2,8 +2,6 @@ import java.util.*;
 
 public class BigInteger {
 
-    public static final int ZERO = 48;
-
     public static final int SUBTRACTION_DEPTH = 10;
 
     public static String getDiffOfNumbers(String s1, String s2) {
@@ -12,8 +10,11 @@ public class BigInteger {
         char[] secondNumber = s2.toCharArray();
         int len = 0;
         boolean isDiffPositive = true;
+        if (s1.matches(".*\\D.*") || s2.matches(".*\\D.*")) {
+            throw new IllegalArgumentException("Строка содержит не числовой символ");
+        }
         if (s1.equals(s2)) {
-            return diff = "0";
+            return "0";
         }
         if (s1.length() == s2.length()) {
             boolean isFirstBigger = true;
@@ -170,6 +171,7 @@ public class BigInteger {
                 }
             }
         }
+        final int ZERO = 48;
         char[] properDiff = new char[diff.length()];
         for (int i = 0; i <= diff.length() - 1; i++) {
             properDiff[diff.length() - i - 1] = diff.charAt(i);
@@ -181,9 +183,7 @@ public class BigInteger {
                 break;
             }
         }
-        diff = new String(properDiff);
-        diff = diff.replaceAll(" ","");
-        return diff;
+        return String.valueOf(properDiff).replace(" ","");
     }
 }
 

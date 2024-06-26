@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Level1 {
+public class SalesReport {
 
     public static String [] ShopOLAP(int N, String [] items) {
         String item = "";
@@ -35,31 +35,31 @@ public class Level1 {
             groupedSalesSummary[i] += " " + numbOfSoldPieces.get(i);
         }
 
-        int maxV = 0;
-        String maxS = "";
-        int tempV = 0;
-        String tempS = "";
+        int itemValueMax = 0;
+        String itemNameMax = "";
+        int tempValue = 0;
+        String tempItem = "";
         for (int i = 0; i < groupedSalesSummary.length; i++) {
             for (int j = i; j < groupedSalesSummary.length; j++) {
                 if (numbOfSoldPieces.get(i).equals(numbOfSoldPieces.get(j)) && (listOfItems.get(i).compareTo(listOfItems.get(j)) > 0)) {
-                    maxV = numbOfSoldPieces.get(j);
-                    tempV = numbOfSoldPieces.get(i);
-                    maxS = listOfItems.get(j);
-                    tempS = listOfItems.get(i);
-                    numbOfSoldPieces.set(i, maxV);
-                    numbOfSoldPieces.set(j, tempV);
-                    listOfItems.set(i, maxS);
-                    listOfItems.set(j, tempS);
+                    itemValueMax = numbOfSoldPieces.get(j);
+                    tempValue = numbOfSoldPieces.get(i);
+                    itemNameMax = listOfItems.get(j);
+                    tempItem = listOfItems.get(i);
+                    numbOfSoldPieces.set(i, itemValueMax);
+                    numbOfSoldPieces.set(j, tempValue);
+                    listOfItems.set(i, itemNameMax);
+                    listOfItems.set(j, tempItem);
                 }
                 if (numbOfSoldPieces.get(i) < numbOfSoldPieces.get(j)) {
-                    maxV = numbOfSoldPieces.get(j);
-                    tempV = numbOfSoldPieces.get(i);
-                    maxS = listOfItems.get(j);
-                    tempS = listOfItems.get(i);
-                    numbOfSoldPieces.set(i, maxV);
-                    numbOfSoldPieces.set(j, tempV);
-                    listOfItems.set(i, maxS);
-                    listOfItems.set(j, tempS);
+                    itemValueMax = numbOfSoldPieces.get(j);
+                    tempValue = numbOfSoldPieces.get(i);
+                    itemNameMax = listOfItems.get(j);
+                    tempItem = listOfItems.get(i);
+                    numbOfSoldPieces.set(i, itemValueMax);
+                    numbOfSoldPieces.set(j, tempValue);
+                    listOfItems.set(i, itemNameMax);
+                    listOfItems.set(j, tempItem);
                 }
             }
         }

@@ -6,7 +6,6 @@ public class KeyMaster {
     public static final String CLOSED_DOOR = "0";
 
     public static String Keymaker(int k) {
-        StringBuffer doors = new StringBuffer();
         String[] matrixK = new String[k];
         Arrays.fill(matrixK, CLOSED_DOOR);
         for (int j = 1; j <= k; j++) {
@@ -18,6 +17,7 @@ public class KeyMaster {
                 }
             }
         }
+        StringBuffer doors = new StringBuffer();
         for (int x = 0; x < k; x++) {
             doors.append(matrixK[x]);
         }
