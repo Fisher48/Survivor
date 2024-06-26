@@ -2,6 +2,8 @@ import java.util.*;
 
 public class TonerConsumption {
 
+    public static final int DEFAULT_CONSUMPTION = 23;
+
     public static int getConsumption(String Line) {
         int sumTonerConsumption = 0;
         for (int i = 0; i < Line.length(); i++) {
@@ -139,7 +141,7 @@ public class TonerConsumption {
             if (Line.charAt(i) == '6') {
                 sumTonerConsumption += 26;
             } else {
-                sumTonerConsumption += 23;
+                sumTonerConsumption += DEFAULT_CONSUMPTION;
             }
         }
         return sumTonerConsumption;

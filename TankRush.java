@@ -1,6 +1,8 @@
 import java.util.*;
 
-public class Level1 {
+public class TankRush {
+
+    public static final String CHECKED = ".";
 
     public static boolean TankRush(int H1, int W1, String S1, int H2, int W2, String S2) {
 
@@ -26,8 +28,9 @@ public class Level1 {
                         String check = areaMap[i].substring(indexOfStr, indexOfStr + checkZone[0].length());
                         if (check.equals(S2)) {
                             isExist = true;
+                            return isExist;
                         }
-                        areaMap[i] = String.valueOf('.');
+                        areaMap[i] = CHECKED;
                         indexOfStr = areaMap[i].indexOf(String.valueOf(checkZone[0]));
                     } else {
                         break;

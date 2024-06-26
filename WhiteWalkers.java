@@ -1,6 +1,9 @@
 import java.util.*;
+import static java.lang.Character.isDigit;
 
 public class WhiteWalkers {
+
+    public static final char WALKER = '=';
 
     public static boolean white_walkers(String village){
         boolean found = false;
@@ -11,7 +14,7 @@ public class WhiteWalkers {
         String s = "";
         List<String> list = new ArrayList<>();
         for (int i = 0; i < village.length(); i++) {
-            if (village.charAt(i) >= '0' && village.charAt(i) <= '9') {
+            if (isDigit(village.charAt(i))) {
                 curr = i;
                 list.add(village.substring(prev,curr+1));
                 prev = curr;
@@ -21,10 +24,10 @@ public class WhiteWalkers {
         for (int i = 0; i < list.size(); i++) {
             s = list.get(i);
             for (int j = 0; j < s.length(); j++) {
-                if (s.charAt(j) == '=') {
+                if (s.charAt(j) == WALKER) {
                     walkers++;
                 }
-                if (s.charAt(j) >= '0' && s.charAt(j) <= '9') {
+                if (isDigit(s.charAt(j))) {
                     sum += Integer.parseInt(String.valueOf(s.charAt(j)));
                 }
             }

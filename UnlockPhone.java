@@ -14,29 +14,25 @@ public class UnlockPhone {
                     if (hits[i] == phone[j][k] && k - 1 <= 2 && k - 1 >= 0 && phone[j][k - 1] == hits[i + 1]){
                         lenDuringDrawnCode += 1;
                     }
-                    if (hits[i] == phone[j][k] && j + 1 <= 2 && j + 1 >= 0 && phone[j + 1][k] == hits[i + 1]){
+                    if (hits[i] == phone[j][k] && j + 1 <= 2 && phone[j + 1][k] == hits[i + 1]){
                         lenDuringDrawnCode += 1;
                     }
-                    if (hits[i] == phone[j][k] && k + 1 <= 2 && k + 1 >= 0 && phone[j][k + 1] == hits[i + 1]){
+                    if (hits[i] == phone[j][k] && k + 1 <= 2 && phone[j][k + 1] == hits[i + 1]){
                         lenDuringDrawnCode += 1;
                     }
-                    if (hits[i] == phone[j][k] && j - 1 <= 2 && j - 1 >= 0 && phone[j - 1][k] == hits[i + 1]){
+                    if (hits[i] == phone[j][k] && j - 1 >= 0 && phone[j - 1][k] == hits[i + 1]){
                         lenDuringDrawnCode += 1;
                     }
-                    if (hits[i] == phone[j][k] && (j - 1 <= 2 && j - 1 >= 0 && k - 1 <= 2 && k - 1 >= 0)
-                            && phone[j - 1][k - 1] == hits[i + 1]){
+                    if (hits[i] == phone[j][k] && j - 1 >= 0 && k - 1 <= 2 && k - 1 >= 0 && phone[j - 1][k - 1] == hits[i + 1]){
                         lenDuringDrawnCode += Math.sqrt(2);
                     }
-                    if (hits[i] == phone[j][k] && (j - 1 <= 2 && j - 1 >= 0 && k + 1 <= 2 && k + 1 >= 0)
-                            && phone[j - 1][k + 1] == hits[i + 1]){
+                    if (hits[i] == phone[j][k] && j - 1 >= 0 && k + 1 <= 2 && phone[j - 1][k + 1] == hits[i + 1]){
                         lenDuringDrawnCode += Math.sqrt(2);
                     }
-                    if (hits[i] == phone[j][k] && (j + 1 <= 2 && j + 1 >= 0 && k + 1 <= 2 && k + 1 >= 0)
-                            && phone[j + 1][k + 1] == hits[i + 1]){
+                    if (hits[i] == phone[j][k] && j + 1 <= 2 && k + 1 <= 2 && phone[j + 1][k + 1] == hits[i + 1]){
                         lenDuringDrawnCode += Math.sqrt(2);
                     }
-                    if (hits[i] == phone[j][k] && (j + 1 <= 2 && j + 1 >= 0 && k - 1 <= 2 && k - 1 >= 0)
-                            && phone[j + 1][k - 1] == hits[i + 1]){
+                    if (hits[i] == phone[j][k] && j + 1 <= 2 && k - 1 <= 2 && k - 1 >= 0 && phone[j + 1][k - 1] == hits[i + 1]){
                         lenDuringDrawnCode += Math.sqrt(2);
                     }
                 }

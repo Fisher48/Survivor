@@ -14,13 +14,9 @@ public class UfoSignals {
        int ratio = 0;
        int currentNumb = 0;
 
-       if (!numberSystem) {
-           ratio = HEXADECIMAL;
-       } else if (numberSystem) {
-           ratio = OCTAL;
-       }
-       int count = 0;
+       ratio = !numberSystem ? HEXADECIMAL : OCTAL;
 
+       int count = 0;
        for (int j = 0; j < N; j++) {
            currentNumb = data[j];
            temp = currentNumb;
