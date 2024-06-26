@@ -1,6 +1,7 @@
 import java.util.*;
 
-public class Level1 {
+public class RedBox {
+
     public static String TheRabbitsFoot(String s, boolean encode) {
 
         String withoutSpace = s.replace(" ","");
@@ -54,7 +55,6 @@ public class Level1 {
 
         } else if (!encode) {
 
-            char[] arrayOfChars = s.toCharArray();
             if (row <= colum) {
                 while (row * colum < withoutSpace.length()) {
                     row += 1;
@@ -70,7 +70,7 @@ public class Level1 {
             int countChars = 0;
             for (int i = 0; i < colum; i++) {
                 for (int j = 0; j < row; j++) {
-                    if (countChars == arrayOfChars.length) {
+                    if (countChars == s.length()) {
                         break;
                     }
                     if (s.charAt(countChars) == ' ' && j != row - 1) {
