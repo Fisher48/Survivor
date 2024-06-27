@@ -2,6 +2,15 @@ import java.util.*;
 
 public class SalesReport {
 
+    public static String[] setGroupingSales(List<String> listOfItems,List<Integer> numbOfSoldPieces){
+        String[] groupedSalesSummary = new String[listOfItems.size()];
+        for (int i = 0; i < listOfItems.size(); i++) {
+            groupedSalesSummary[i] = listOfItems.get(i);
+            groupedSalesSummary[i] += " " + numbOfSoldPieces.get(i);
+        }
+        return groupedSalesSummary;
+    }
+
     public static String [] ShopOLAP(int N, String [] items) {
         String item = "";
         List<String> listOfItems = new ArrayList<>();
@@ -29,12 +38,7 @@ public class SalesReport {
             countOfItems++;
         }
 
-        String[] groupedSalesSummary = new String[listOfItems.size()];
-        for (int i = 0; i < listOfItems.size(); i++) {
-            groupedSalesSummary[i] = listOfItems.get(i);
-            groupedSalesSummary[i] += " " + numbOfSoldPieces.get(i);
-        }
-
+        String[] groupedSalesSummary = setGroupingSales(listOfItems,numbOfSoldPieces);
         int itemValueMax = 0;
         String itemNameMax = "";
         int tempValue = 0;
@@ -63,11 +67,7 @@ public class SalesReport {
                 }
             }
         }
-        for (int i = 0; i < listOfItems.size(); i++) {
-            groupedSalesSummary[i] = listOfItems.get(i);
-            groupedSalesSummary[i] += " " + numbOfSoldPieces.get(i);
-        }
-        return groupedSalesSummary;
+        return setGroupingSales(listOfItems,numbOfSoldPieces);
     }
 }
 

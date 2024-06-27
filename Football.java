@@ -3,25 +3,16 @@ import java.util.*;
 public class Football {
 
     public static int[] backCurrF(int[] changeF){
-        int[] F = new int[changeF.length];
-        for (int i = 0; i < changeF.length; i++) {
-            F[i] = changeF[i];
-        }
-        return F;
+        return Arrays.copyOf(changeF, changeF.length);
     }
 
-    public static boolean first(int F[], int N) {
-        int one = 0;
-        int two = 0;
-        int[] temp = new int[N];
-        for (int i = 0; i < N; i++) {
-            temp[i] = F[i];
-        }
+    public static boolean first(int[] F, int N) {
+        int[] temp = Arrays.copyOf(F,N);
         Arrays.sort(temp);
         for (int i = 0; i < N; i++) {
-            one = F[i];
+            int one = F[i];
             for (int j = i + 1; j < N; j++) {
-                two = F[j];
+                int two = F[j];
                 F[i] = two;
                 F[j] = one;
                 if (!Arrays.equals(F, temp)) {
@@ -37,15 +28,10 @@ public class Football {
 
 
     public static boolean second(int F[], int N){
-        int[] temp = new int[N];
-        int[] currF = new int[N];
-        for (int i = 0; i < N; i++) {
-            temp[i] = F[i];
-            currF[i] = F[i];
-        }
+        int[] temp = Arrays.copyOf(F,N);
+        int[] currF = Arrays.copyOf(F,N);
         Arrays.sort(temp);
         int change = 0;
-
         for (int i = 0; i < N / 2; i++) {
             for(int j = 0; j <= N / 2; j++) {
                 change = F[j];
@@ -94,11 +80,8 @@ public class Football {
         return false;
     }
 
-    public static boolean Football(int F[], int N){
-        int[] temp = new int[N];
-        for (int i = 0; i < N; i++) {
-            temp[i] = F[i];
-        }
+    public static boolean Football(int[] F, int N){
+        int[] temp = Arrays.copyOf(F,N);
         Arrays.sort(temp);
         if (Arrays.equals(temp, F)){
             return false;

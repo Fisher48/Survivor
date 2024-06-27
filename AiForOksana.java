@@ -4,10 +4,9 @@ public class AiForOksana {
 
    public static int SumOfThe(int N, int [] data){
         int checkNumber = 0;
-        int temp;
         for (int i = 0; i <= N; i++) {
             checkNumber = data[i];
-            temp = checkNumber;
+            int temp = checkNumber;
             data[i] = 0;
             int sumOfAllOtherNumbers = 0;
             for (int j = 0; j < N; j++) {

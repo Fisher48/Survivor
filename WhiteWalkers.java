@@ -17,11 +17,10 @@ public class WhiteWalkers {
             }
         }
 
-        int sum = 0;
-        int walkers = 0;
         boolean found = false;
-        for (int i = 0; i < list.size(); i++) {
-            String s = list.get(i);
+        for (String s : list) {
+            int sum = 0;
+            int walkers = 0;
             for (int j = 0; j < s.length(); j++) {
                 if (s.charAt(j) == WALKER) {
                     walkers++;
@@ -31,13 +30,9 @@ public class WhiteWalkers {
                 }
             }
             if (sum != 10) {
-                sum = 0;
-                walkers = 0;
                 continue;
             }
             found = walkers >= 3;
-            sum = 0;
-            walkers = 0;
         }
         return found;
     }

@@ -2,15 +2,15 @@ import java.util.*;
 
 public class BastShoe2 {
 
-    public static List<String> allChanges = new ArrayList<>();
-    public static List<String> numbOfOperations = new ArrayList<>();
-    public static int count = 0;
-    public static StringBuffer stringBuffer = new StringBuffer();
-    public static final char ADDING = '1';
-    public static final char DELETE = '2';
-    public static final char GET_SYMBOL = '3';
-    public static final String UNDO = "4";
-    public static final String REDO = "5";
+    private static List<String> allChanges = new ArrayList<>();
+    private static List<String> numbOfOperations = new ArrayList<>();
+    private static int count = 0;
+    private static StringBuffer stringBuffer = new StringBuffer();
+    private static final char ADDING = '1';
+    private static final char DELETE = '2';
+    private static final char GET_SYMBOL = '3';
+    private static final String UNDO = "4";
+    private static final String REDO = "5";
 
     public static String add(String command) {
         stringBuffer.append(command.substring(2));

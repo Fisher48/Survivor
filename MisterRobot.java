@@ -3,9 +3,8 @@ import java.util.*;
 public class MisterRobot {
 
     public static int[] getSortedSequence(int[] temp){
-        int x = 0;
         for (int i = 0; i < 2; i++) {
-            x = temp[i];
+            int x = temp[i];
             temp[i] = temp[i + 1];
             temp[i + 1] = x;
         }

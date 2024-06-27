@@ -28,16 +28,13 @@ public class Election {
             }
         }
         String noWinner = "no winner";
-        if (sumOfVotesOnElection == 0) {
+        if (sumOfVotesOnElection == 0 || !isOneWinner) {
             return noWinner;
         }
 
         double percent = (double) (maxVotes * 100) / sumOfVotesOnElection;
         percent = Math.ceil(percent * DECIMAL_PLACES) / DECIMAL_PLACES;
 
-        if (!isOneWinner) {
-            return noWinner;
-        }
         if (percent > 50.0) {
             return  "majority winner " + possibleCandidate;
         }

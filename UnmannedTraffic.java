@@ -1,12 +1,12 @@
 import java.util.*;
 
-public class Level1 {
+public class UnmannedTraffic {
+
     public static int Unmanned(int L, int N, int[][] track) {
-        boolean isRed = true;
         int totalTime = 0;
         int count = 0;  // общий счетчик ходов
-
         for (int k = 0; k < track.length; k++) {
+            boolean isRed = true;
             int timeLight = 0;
             int waitTime = 0;
             int timeDrive = 0;

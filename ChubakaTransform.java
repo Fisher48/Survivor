@@ -4,11 +4,10 @@ public class ChubakaTransform {
 
     public static List<Integer> setTransformation(int[] A){
         ArrayList<Integer> B = new ArrayList<>();
-        int k = 0;
         int max = -1;
         for (int i = 0; i <= A.length-1; i++) {
             for (int j = 0; j <= A.length-i-1; j++) {
-                k = i + j;
+                int k = i + j;
                 for (int x = j; x <= k; x++) {
                     if (A[x] > max) {
                         max = A[x];

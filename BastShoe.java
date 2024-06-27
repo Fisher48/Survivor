@@ -1,9 +1,9 @@
 import java.util.*;
 
-public class Level1 {
+public class BastShoe {
 
-    public static StringBuffer sb = new StringBuffer();
-    static List<String> changes = new ArrayList<>();
+    private static StringBuffer sb = new StringBuffer();
+    private static List<String> changes = new ArrayList<>();
 
     public static String BastShoe(String command) {
         String currentString = "";

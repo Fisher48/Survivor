@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Level1 {
+public class TreeOfLife {
 
     public static final int AGE_OF_DEATH = 3;
 
@@ -114,9 +114,8 @@ public class Level1 {
 
     public static String[] TreeOfLife(int H, int W, int N, String [] tree){
         int[][] treeDigitArray = new int[H][W];
-        char[] temp;
         for (int i = 0; i < H; i++) {
-            temp = tree[i].toCharArray();
+            char[] temp = tree[i].toCharArray();
             for (int j = 0; j < W; j++) {
                 if (temp[j] == '.') {
                     treeDigitArray[i][j] = 0;

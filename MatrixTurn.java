@@ -12,9 +12,9 @@ public class MatrixTurn {
             }
         }
 
-        int prev;
-        int curr;
         for (int step = 0; step < T; step++) {
+            int prev;
+            int curr;
             int row = 0;
             int colum = 0;
             M = digitsMatrix.length;

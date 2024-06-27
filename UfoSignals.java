@@ -8,7 +8,6 @@ public class UfoSignals {
     public static int [] UFO(int N, int [] data, boolean numberSystem) {
 
        int[] decimalCode = new int[N];
-       int ratio = !numberSystem ? HEXADECIMAL : OCTAL;
        int count = 0;
        for (int j = 0; j < N; j++) {
            int currentNumb = data[j];
@@ -27,6 +26,7 @@ public class UfoSignals {
            }
            int numb = 0;
            for (int i = 0; i < count; i++) {
+               int ratio = !numberSystem ? HEXADECIMAL : OCTAL;
                int extent = (int) Math.pow(ratio, i);
                numb += extent * digits[i];
            }
