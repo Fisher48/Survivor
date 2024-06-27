@@ -18,7 +18,7 @@ public class MadMax {
             }
         }
         for (int i = 1; i <= N/2; i++) {
-                impulse[(N/2)+i] = Tele[N-i-1];
+            impulse[(N/2)+i] = Tele[N-i-1];
         }
         return impulse;
     }
