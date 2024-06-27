@@ -2,8 +2,8 @@ import java.util.*;
 
 public class UfoSignals {
 
-    public static final int OCTAL = 8;
-    public static final int HEXADECIMAL = 16;
+    private static final int OCTAL = 8;
+    private static final int HEXADECIMAL = 16;
 
     public static int [] UFO(int N, int [] data, boolean numberSystem) {
 

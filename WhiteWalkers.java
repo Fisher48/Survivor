@@ -3,7 +3,7 @@ import static java.lang.Character.isDigit;
 
 public class WhiteWalkers {
 
-    public static final char WALKER = '=';
+    private static final char WALKER = '=';
 
     public static boolean white_walkers(String village){
         int curr = 0;
