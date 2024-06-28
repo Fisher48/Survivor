@@ -21,12 +21,12 @@ public class WhiteWalkers {
         for (String s : list) {
             int sum = 0;
             int walkers = 0;
-            for (int j = 0; j < s.length(); j++) {
-                if (s.charAt(j) == WALKER) {
+            for (char symbol : s.toCharArray()) {
+                if (symbol == WALKER) {
                     walkers++;
                 }
-                if (isDigit(s.charAt(j))) {
-                    sum += Integer.parseInt(String.valueOf(s.charAt(j)));
+                if (isDigit(symbol)) {
+                    sum += Integer.parseInt(String.valueOf(symbol));
                 }
             }
             if (sum != 10) {

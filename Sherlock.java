@@ -4,8 +4,8 @@ public class Sherlock {
 
     public static int sumOfChars(char[] checkSumOfChars) {
         int x = 0;
-        for (int i = 0; i < checkSumOfChars.length; i++) {
-            x += Integer.parseInt(String.valueOf(checkSumOfChars[i]));
+        for (char checkSumOfChar : checkSumOfChars) {
+            x += Integer.parseInt(String.valueOf(checkSumOfChar));
         }
         return x;
     }
