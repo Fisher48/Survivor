@@ -27,6 +27,7 @@ public class SalesReport {
         }
 
         int countOfItems = 0;
+        // Объединить кол-во проданных штук у одинаковых товаров
         while (countOfItems < N - 1) {
             if (listOfItems.get(countOfItems).equals(listOfItems.get(countOfItems + 1))) {
                 numbOfSoldPieces.set(countOfItems, numbOfSoldPieces.get(countOfItems) + numbOfSoldPieces.get(countOfItems + 1));
@@ -43,6 +44,7 @@ public class SalesReport {
         String itemNameMax = "";
         int tempValue = 0;
         String tempItem = "";
+        // Расположить по количеству продаж или в лексикографическом порядке
         for (int i = 0; i < groupedSalesSummary.length; i++) {
             for (int j = i; j < groupedSalesSummary.length; j++) {
                 if (numbOfSoldPieces.get(i).equals(numbOfSoldPieces.get(j)) && (listOfItems.get(i).compareTo(listOfItems.get(j)) > 0)) {

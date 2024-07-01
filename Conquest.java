@@ -9,6 +9,7 @@ public class Conquest {
         int expectedSum = N * M;
         int sum = 0;
 
+        // Высадка десанта и захват первых точек
         if (battalion.length == L * 2) {
             for (int i = 0; i <= L * 2 - 1; i += 2) {
                 square[battalion[i] - 1][battalion[i + 1] - 1] = 1;
@@ -123,6 +124,7 @@ public class Conquest {
                     }
                 }
             }
+
             for (int k = 0; k <= N - 1; k++) {
                 for (int l = 0; l <= M - 1; l++) {
                     if (square[k][l] != 0) {

@@ -61,6 +61,7 @@ public class Sherlock {
             return true;
         }
 
+        // Проверяем, можно ли удалить одну букву, чтобы условие задачи выполнялось
         for (int i = 0; i < numberOfChars.length; i++) {
             numberOfChars[i] -= 1;
             if (!checkQuantity(numberOfChars)) {

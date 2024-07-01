@@ -126,11 +126,12 @@ public class TreeOfLife {
         }
 
         int years = 0;
+        // перерождение дерева
         while (years < N) {
             years++;
             for (int k = 0; k < treeDigitArray.length; k++) {
                 for (int z = 0; z < treeDigitArray[0].length; z++) {
-                    treeDigitArray[k][z] += 1;
+                    treeDigitArray[k][z] += 1; // ветки стареют на год
                 }
             }
 

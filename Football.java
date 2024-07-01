@@ -32,6 +32,7 @@ public class Football {
         int[] currF = Arrays.copyOf(F,N);
         Arrays.sort(temp);
         int change = 0;
+        // Изменяем на обратный порядок, двигаясь влево
         for (int i = 0; i < N / 2; i++) {
             for(int j = 0; j <= N / 2; j++) {
                 change = F[j];
@@ -45,6 +46,7 @@ public class Football {
             }
         }
 
+        // Изменяем на обратный порядок, двигаясь к центру
         while (N > 0) {
             for (int i = 0; i <= N / 2; i++) {
                 for (int j = N - 1; j > N / 2; j--) {
@@ -62,6 +64,7 @@ public class Football {
         }
 
         N = F.length-1;
+        // Изменяем на обратный порядок, двигаясь вправо
         while (N > 0) {
                 for (int j = 0; j < N / 2; j++) {
                     for (int i = 1; i < N / 2; i++) {
