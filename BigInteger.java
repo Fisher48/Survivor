@@ -78,6 +78,8 @@ public class BigInteger {
         for (int i = 0; i <= diff.length() - 1; i++) {
             properDiff[diff.length() - i - 1] = diff.charAt(i);
         }
+        // Необходимо удалить лишние нули (в начале числа), которые образовались при разности чисел.
+        // Если это не сделать, число может получиться некорректным.
         for (int i = 0; i <= properDiff.length; i++) {
             if (properDiff[i] == ZERO) {
                 properDiff[i] = ' ';

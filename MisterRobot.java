@@ -2,6 +2,7 @@ import java.util.*;
 
 public class MisterRobot {
 
+    // Мы пытаемся переставить 3 элемента и получить отсортированную последовательность
     public static int[] getSortedSequence(int[] temp){
         for (int i = 0; i < 2; i++) {
             int x = temp[i];

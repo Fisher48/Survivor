@@ -15,6 +15,7 @@ public class Conquest {
                 square[battalion[i] - 1][battalion[i + 1] - 1] = 1;
             }
         }
+        // Проверяем захвачена ли карта уже на этапе высадки
         for (int i = 0; i <= N - 1; i++) {
             for (int j = 0; j <= M - 1; j++) {
                 sum += square[i][j];
@@ -23,6 +24,7 @@ public class Conquest {
         if (sum == expectedSum) {
             isCaptured = true;
         }
+        // TODO - На будещее, в следующей ревизии, попробовать упростить цикл и сделать его более компактным и читабельным.
         while (!isCaptured) {
             for (int i = 0; i <= N - 1; i++) {
                 for (int j = 0; j <= M - 1; j++) {

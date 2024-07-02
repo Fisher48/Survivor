@@ -32,6 +32,9 @@ public class GoogleSearch {
             countOfCharsInSubstr++;
         }
 
+        // Данное преобразование при поиске слова, необходимо по условию задачи.
+        // Результат работы алгоритма - последовательность целых чисел 1 или 0,
+        // которые показывают, имеется ли в соответствующей строке запрошенное слово.
         int[] FindWord = new int[list.size()];
         for (int i = 0; i < list.size(); i++) {
             String[] check = list.get(i).split(" ");

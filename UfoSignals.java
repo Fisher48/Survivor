@@ -5,6 +5,9 @@ public class UfoSignals {
     private static final int OCTAL = 8;
     private static final int HEXADECIMAL = 16;
 
+    // UFO получает на вход длину N цифровой записи трафика, сам трафик (последовательность положительных чисел) в массиве data, и флажок numberSystem,
+    // который задаёт систему счисления входных данных: восьмеричная если numberSystem = true, и шестнадцатеричная в противном случае.
+    // Функция возвращает массив длины N, содержащий исходные числа, преобразованные в десятичную систему счисления.
     public static int [] UFO(int N, int [] data, boolean numberSystem) {
 
        int[] decimalCode = new int[N];

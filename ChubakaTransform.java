@@ -23,6 +23,8 @@ public class ChubakaTransform {
     public static boolean TransformTransform(int A[], int N){
         List<Integer> B1 = setTransformation(A);
         int[] temp = new int[B1.size()];
+        // Создаем временный список, чтобы прогнать его еще раз через Метод Трансформации.
+        // Так как этого требует условие задания (Двойная Трансформация).
         for (int i = 0; i < B1.size(); i++) {
             temp[i] = B1.get(i);
         }

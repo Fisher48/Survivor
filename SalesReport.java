@@ -16,6 +16,7 @@ public class SalesReport {
         List<String> listOfItems = new ArrayList<>();
         List<Integer> numbOfSoldPieces = new ArrayList<>();
         Arrays.sort(items);
+        // TODO - Изменить подход к решению задачи на использование словаря вместо списков.
         for (int k = 0; k < N; k++) {
             item = items[k];
             for (int i = 0; i < item.length(); i++) {
