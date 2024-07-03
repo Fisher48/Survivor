@@ -113,8 +113,7 @@ public class TreeOfLife {
     }
 
     // Функция получает высоту H (количество строк) и ширину W (длина строк) дерева,
-    // количество лет моделирования N и сам список строк, задающий начальное дерево с помощью "." и "+".
-    // И моделирует N лет развития дерева, и выводит его результирующую форму - список/массив строк (используются только символы "." и "+").
+    // N - кол-во лет моделирования, tree[] - список строк, состоит из "." - пустой элемент "+" - ветка.
     public static String[] TreeOfLife(int H, int W, int N, String [] tree){
         int[][] treeDigitArray = new int[H][W];
         for (int i = 0; i < H; i++) {
@@ -129,12 +128,11 @@ public class TreeOfLife {
         }
 
         int years = 0;
-        // перерождение дерева
         while (years < N) {
             years++;
             for (int k = 0; k < treeDigitArray.length; k++) {
                 for (int z = 0; z < treeDigitArray[0].length; z++) {
-                    treeDigitArray[k][z] += 1; // ветки стареют на год
+                    treeDigitArray[k][z] += 1;
                 }
             }
 
