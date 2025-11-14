@@ -6,104 +6,25 @@ public class TreeOfLife {
 
     public static final int NO_BRANCH = 0;
 
-    public static int[][] destructionOfTree(int[][] tree) {
+    public static final int[][] DIRECTIONS = new int[][] { {0, 1}, {1, 0}, {-1, 0}, {0, -1} };
 
-        for (int i = 0; i < tree.length; i++) {
-            for (int j = 0; j < tree[0].length; j++) {
+    public static int[][] destructionOfTree(int[][] tree) {
+        int rows = tree.length;
+        int cols = tree[0].length;
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+
                 if (tree[i][j] >= AGE_OF_DEATH) {
-                    tree[i][j] = 0;
-                    if (i == 0) {
-                        if (j == 0) {
-                            if (tree[i + 1][j] < AGE_OF_DEATH) {
-                                tree[i + 1][j] = NO_BRANCH;
-                            }
-                            if (tree[i][j + 1] < AGE_OF_DEATH) {
-                                tree[i][j + 1] = NO_BRANCH;
-                            }
-                        }
-                        if (j == tree[0].length - 1) {
-                            if (tree[i][j - 1] < AGE_OF_DEATH) {
-                                tree[i][j - 1] = NO_BRANCH;
-                            }
-                            if (tree[i + 1][j] < AGE_OF_DEATH) {
-                                tree[i + 1][j] = NO_BRANCH;
-                            }
-                        }
-                        if (j > 0 && j < tree[0].length - 1) {
-                            if (tree[i][j - 1] < AGE_OF_DEATH) {
-                                tree[i][j - 1] = NO_BRANCH;
-                            }
-                            if (tree[i + 1][j] < AGE_OF_DEATH) {
-                                tree[i + 1][j] = NO_BRANCH;
-                            }
-                            if (tree[i][j + 1] < AGE_OF_DEATH) {
-                                tree[i][j + 1] = NO_BRANCH;
-                            }
-                        }
-                    }
-                    if (i == tree.length - 1) {
-                        if (j == 0) {
-                            if (tree[i - 1][j] < AGE_OF_DEATH) {
-                                tree[i - 1][j] = NO_BRANCH;
-                            }
-                            if (tree[i][j + 1] < AGE_OF_DEATH) {
-                                tree[i][j + 1] = NO_BRANCH;
-                            }
-                        }
-                        if (j == tree[0].length - 1) {
-                            if (tree[i][j - 1] < AGE_OF_DEATH) {
-                                tree[i][j - 1] = NO_BRANCH;
-                            }
-                            if (tree[i - 1][j] < AGE_OF_DEATH) {
-                                tree[i - 1][j] = NO_BRANCH;
-                            }
-                        }
-                        if (j > 0 && j < tree[0].length - 1) {
-                            if (tree[i][j - 1] < AGE_OF_DEATH) {
-                                tree[i][j - 1] = NO_BRANCH;
-                            }
-                            if (tree[i - 1][j] < AGE_OF_DEATH) {
-                                tree[i - 1][j] = NO_BRANCH;
-                            }
-                            if (tree[i][j + 1] < AGE_OF_DEATH) {
-                                tree[i][j + 1] = NO_BRANCH;
-                            }
-                        }
-                    }
-                    if (i < tree.length - 1 && i > 0 && j == 0) {
-                        if (tree[i - 1][j] < AGE_OF_DEATH) {
-                            tree[i - 1][j] = NO_BRANCH;
-                        }
-                        if (tree[i + 1][j] < AGE_OF_DEATH) {
-                            tree[i + 1][j] = NO_BRANCH;
-                        }
-                        if (tree[i][j + 1] < AGE_OF_DEATH) {
-                            tree[i][j + 1] = NO_BRANCH;
-                        }
-                    }
-                    if (i < tree.length - 1 && i > 0 && j == tree[0].length - 1) {
-                        if (tree[i - 1][j] < AGE_OF_DEATH) {
-                            tree[i - 1][j] = NO_BRANCH;
-                        }
-                        if (tree[i + 1][j] < AGE_OF_DEATH) {
-                            tree[i + 1][j] = NO_BRANCH;
-                        }
-                        if (tree[i][j - 1] < AGE_OF_DEATH) {
-                            tree[i][j - 1] = NO_BRANCH;
-                        }
-                    }
-                    if (i > 0 && i < tree.length - 1 && j > 0 && j < tree[0].length - 1) {
-                        if (tree[i - 1][j] < AGE_OF_DEATH) {
-                            tree[i - 1][j] = NO_BRANCH;
-                        }
-                        if (tree[i + 1][j] < AGE_OF_DEATH) {
-                            tree[i + 1][j] = NO_BRANCH;
-                        }
-                        if (tree[i][j - 1] < AGE_OF_DEATH) {
-                            tree[i][j - 1] = NO_BRANCH;
-                        }
-                        if (tree[i][j + 1] < AGE_OF_DEATH) {
-                            tree[i][j + 1] = NO_BRANCH;
+                    tree[i][j] = NO_BRANCH;
+
+                    for (int[] dir : DIRECTIONS) {
+                        int ni = i + dir[0];
+                        int nj = j + dir[1];
+
+                        if (ni >= 0 && ni < rows && nj >= 0 && nj < cols
+                                && tree[ni][nj] < AGE_OF_DEATH) {
+                            tree[ni][nj] = NO_BRANCH;
                         }
                     }
                 }

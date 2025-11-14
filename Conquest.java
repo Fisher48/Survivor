@@ -1,152 +1,51 @@
 import java.util.*;
+import java.util.LinkedList;
 
 public class Conquest {
 
     public static int ConquestCampaign(int N, int M, int L, int[] battalion) {
-        int days = 1;
-        boolean isCaptured = false;
         int[][] square = new int[N][M];
-        int expectedSum = N * M;
-        int sum = 0;
+        Queue<int[]> queue = new LinkedList<>();
 
         // Высадка десанта и захват первых точек
-        if (battalion.length == L * 2) {
-            for (int i = 0; i <= L * 2 - 1; i += 2) {
-                square[battalion[i] - 1][battalion[i + 1] - 1] = 1;
-            }
+        for (int i = 0; i < L * 2; i += 2) {
+            int x = battalion[i] - 1;
+            int y = battalion[i + 1] - 1;
+            square[x][y] = 1;
+            queue.add(new int[]{x, y});
         }
-        // Проверяем захвачена ли карта уже на этапе высадки
-        for (int i = 0; i <= N - 1; i++) {
-            for (int j = 0; j <= M - 1; j++) {
-                sum += square[i][j];
-            }
-        }
-        if (sum == expectedSum) {
-            isCaptured = true;
-        }
-        // TODO - На будещее, в следующей ревизии, попробовать упростить цикл и сделать его более компактным и читабельным.
-        while (!isCaptured) {
-            for (int i = 0; i <= N - 1; i++) {
-                for (int j = 0; j <= M - 1; j++) {
-                    if (square[i][j] == days) {
-                        if (i == 0) {
-                            if (j == 0) {
-                                if (square[i + 1][j] == 0) {
-                                    square[i + 1][j] = days + 1;
-                                }
-                                if (square[i][j + 1] == 0) {
-                                    square[i][j + 1] = days + 1;
-                                }
-                            }
-                            if (j == M - 1) {
-                                if (square[i][j - 1] == 0) {
-                                    square[i][j - 1] = days + 1;
-                                }
-                                if (square[i + 1][j] == 0) {
-                                    square[i + 1][j] = days + 1;
-                                }
-                            }
-                            if (j > 0 && j < M - 1) {
-                                if (square[i][j - 1] == 0) {
-                                    square[i][j - 1] = days + 1;
-                                }
-                                if (square[i + 1][j] == 0) {
-                                    square[i + 1][j] = days + 1;
-                                }
-                                if (square[i][j + 1] == 0) {
-                                    square[i][j + 1] = days + 1;
-                                }
-                            }
-                        }
-                        if (i == N - 1) {
-                            if (j == 0) {
-                                if (square[i - 1][j] == 0) {
-                                    square[i - 1][j] = days + 1;
-                                }
-                                if (square[i][j + 1] == 0) {
-                                    square[i][j + 1] = days + 1;
-                                }
-                            }
-                            if (j == M - 1) {
-                                if (square[i][j - 1] == 0) {
-                                    square[i][j - 1] = days + 1;
-                                }
-                                if (square[i - 1][j] == 0) {
-                                    square[i - 1][j] = days + 1;
-                                }
-                            }
-                            if (j > 0 && j < M - 1) {
-                                if (square[i][j - 1] == 0) {
-                                    square[i][j - 1] = days + 1;
-                                }
-                                if (square[i - 1][j] == 0) {
-                                    square[i - 1][j] = days + 1;
-                                }
-                                if (square[i][j + 1] == 0) {
-                                    square[i][j + 1] = days + 1;
-                                }
-                            }
-                        }
-                        if (i < N - 1 && i > 0 && j == 0) {
-                            if (square[i - 1][j] == 0) {
-                                square[i - 1][j] = days + 1;
-                            }
-                            if (square[i + 1][j] == 0) {
-                                square[i + 1][j] = days + 1;
-                            }
-                            if (square[i][j + 1] == 0) {
-                                square[i][j + 1] = days + 1;
-                            }
-                        }
-                        if (i < N - 1 && i > 0 && j == M - 1) {
-                            if (square[i - 1][j] == 0) {
-                                square[i - 1][j] = days + 1;
-                            }
-                            if (square[i + 1][j] == 0) {
-                                square[i + 1][j] = days + 1;
-                            }
-                            if (square[i][j - 1] == 0) {
-                                square[i][j - 1] = days + 1;
-                            }
-                        }
-                        if (i > 0 && i < N - 1 && j > 0 && j < M - 1) {
-                            if (square[i - 1][j] == 0) {
-                                square[i - 1][j] = days + 1;
-                            }
-                            if (square[i + 1][j] == 0) {
-                                square[i + 1][j] = days + 1;
-                            }
-                            if (square[i][j - 1] == 0) {
-                                square[i][j - 1] = days + 1;
-                            }
-                            if (square[i][j + 1] == 0) {
-                                square[i][j + 1] = days + 1;
-                            }
-                        }
-                    }
-                }
-            }
 
-            for (int k = 0; k <= N - 1; k++) {
-                for (int l = 0; l <= M - 1; l++) {
-                    if (square[k][l] != 0) {
-                        square[k][l] = days + 1;
-                    }
-                }
-            }
-            days++;
+        // Определяем ограничение по направлению (вверх, вниз, влево, вправо)
+        int[][] directions = { {0, 1}, {1, 0}, {-1, 0}, {0, -1} };
 
-            isCaptured = true;
-            for (int i = 0; i <= N - 1; i++) {
-                for (int j = 0; j <= M - 1; j++) {
-                    if (square[i][j] == 0) {
-                        isCaptured = false;
-                        break;
-                    }
+        int maxDay = 1;
+
+        // Выполняем захват карты, пока очередь не будет пустой
+        while (!queue.isEmpty()) {
+            // Берем текущую координату из очереди
+            int[] cell = queue.poll();
+            int currRow = cell[0]; // текущая колонка
+            int currCol = cell[1]; // текущий столбец
+            // День захвата на текущей ячейке карты
+            int days = square[currRow][currCol];
+
+            // Проходим по направлениям (вверх, вниз, влево, вправо)
+            // И захватывает соседние координаты на карте (при условии, что они в пределах границы)
+            for (int[] direction : directions) {
+                int neighborRow = currRow + direction[0];
+                int neighborCol = currCol + direction[1];
+                // Проверяем что в пределах границ и мы еще не посещали эту точку
+                if (neighborRow >= 0 && neighborRow < N && neighborCol >= 0 && neighborCol < M
+                        && square[neighborRow][neighborCol] == 0) {
+                    // Устанавливаем новый день захвата на карте для соседа
+                    square[neighborRow][neighborCol] = days + 1;
+                    maxDay = Math.max(maxDay, days + 1); // обновляем максимальный день захвата
+                    queue.add(new int[]{neighborRow, neighborCol}); // добавляем соседа в очередь, для последующего захвата от него
                 }
             }
         }
-        return days;
+
+        return maxDay;
     }
 }
 
